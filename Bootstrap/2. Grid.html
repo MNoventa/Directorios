@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+	
+	<!--Con container centramos todo el contenido-->
+	<!--Con container-fluid abarcamos el 100% de la pantalla-->
+	<header>
+		<div class="container">
+			<h1>Header</h1>
+		</div>
+	</header>
+	
+	<div class="container">
+
+	<!--Organización por columnas-->
+
+		<section class="main row">
+			<article class="col-xs-12 col-sm-8 col-md-7 col-lg-9">
+				<h2>Article</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, magni? Velit minus, vero suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid hic! Reiciendis, similique, et?</p>
+			</article>
+
+			<aside class="col-xs-12 col-sm-4 col-md-5 col-lg-3">
+				<h2>Aside</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui in vel, quidem architecto iusto voluptas sed quos, dolor non nobis inventore earum et fugiat maiores, laboriosam tenetur cumque perspiciatis voluptates.</p>
+			</aside>		
+		</section>
+		
+		<br><br><br>
+
+		<div class="row">
+			<div class="color1 col-xs-12 col-sm-6 col-md-3">
+				<h3>Div 1</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nesciunt, iusto voluptatum magni voluptatibus velit facere quia delectus. Tenetur, consequuntur nam numquam maiores placeat iusto quidem laudantium tempore eum aliquid. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat beatae ea modi provident voluptates dolorum eveniet hic vitae. Fuga voluptas ducimus ipsam culpa, labore adipisci veritatis enim reprehenderit delectus in!</p>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3">
+				<h3>Div 2</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam consequatur eligendi quidem rem recusandae voluptas eveniet atque provident error, culpa distinctio molestiae. Recusandae sapiente ex soluta incidunt voluptatibus maiores architecto!</p>
+			</div>
+
+	<!--Para evitar desesctructuración de los contenedores (por tener más texto el primer div), añadimos lo siguiente: -->
+
+				<div class="clearfix visible-sm-block"></div>	
+
+			<div class="color1 col-xs-12 col-sm-6 col-md-3">
+				<h3>Div 3</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae exercitationem neque reprehenderit laudantium nisi, earum aliquam facilis omnis repellendus. Mollitia quae quos, sed suscipit praesentium! Error delectus expedita cupiditate eligendi.</p>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3">
+				<h3>Div 4</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid inventore atque dolorum nihil quasi quia officia id doloremque! Suscipit pariatur distinctio, vero facere porro ab sint eius, iure iste omnis!</p>
+			</div>
+		</div>
+
+		<br><br><br>
+
+	<!--Teniendo en cuenta los divs anteriores, en el caso de que un div se elimine. Tendremos que poner una columna hacia la derecha: -->
+
+		<div class="row">
+			<div class="color2 col-xs-12 col-sm-6 col-md-3">
+				<h3>Div 1.2</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam consequatur eligendi quidem rem recusandae voluptas eveniet atque provident error, culpa distinctio molestiae. Recusandae sapiente ex soluta incidunt voluptatibus maiores architecto!</p>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3">
+				<h3>Div 2.2</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam consequatur eligendi quidem rem recusandae voluptas eveniet atque provident error, culpa distinctio molestiae. Recusandae sapiente ex soluta incidunt voluptatibus maiores architecto!</p>
+			</div>	
+			<div class="color2 col-xs-12 col-sm-6 col-md-3 col-md-offset-3">
+				<h3>Div 3.2 - Desplazado x3</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae exercitationem neque reprehenderit laudantium nisi, earum aliquam facilis omnis repellendus. Mollitia quae quos, sed suscipit praesentium! Error delectus expedita cupiditate eligendi.</p>
+			</div>
+
+			<!--<div class="col-xs-12 col-sm-6 col-md-3">
+				<h3>Div 4.2</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid inventore atque dolorum nihil quasi quia officia id doloremque! Suscipit pariatur distinctio, vero facere porro ab sint eius, iure iste omnis!</p>
+			</div>-->
+		</div>	
+	</div>
+
+	<br><br>
+
+	<footer>
+		<div class="container">
+			<h6>¡Mario García Lucas!</h6>
+		</div>
+	</footer>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
