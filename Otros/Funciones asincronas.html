@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	
+	//FUNCIONES ASINCRONAS: Funciones que pueden ser llamadas ahora o en el futuro.
+
+	$(document).ready(function(){
+
+		function contarCoches(max){
+			for(var vuelta=0; vuelta<max; vuelta++){
+				console.log('Coches -> #' + vuelta);
+			}
+		}
+
+		function contarMotos(max){
+			for(var vuelta=0; vuelta<max; vuelta++){
+				console.log('Motos -> #' + vuelta);
+			}
+		}
+
+		function Asincrona(params){
+			setTimeout(function correrAsync(){
+
+				params.call(params.llamadafunct(params.max)); 
+
+			},params.tiempo)
+		}
+
+		console.log('Antes de cotador')
+
+		//contarCoches(5);
+		//contarMotos(5);
+
+		Asincrona({llamadafunct: contarCoches, max:5, tiempo:1000}); //Forma de pasar parámetros, en vez de pasar parametros así (   Asincrona(contarCoches, 5, 1000)   ).
+		Asincrona({llamadafunct: contarMotos, max:5, tiempo:0});
+
+		console.log('Despúes de cotador')
+
+	});
+
+</script>
+<body>
+	
+</body>
+
+
+</html>

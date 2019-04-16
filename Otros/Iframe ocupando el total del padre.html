@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.padre{
+			background: red;
+			position: relative;
+			margin: 0 auto;
+			width: 100%;
+			height: 450px;
+		}
+		iframe{
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			right: 0;
+			top: 0;
+		}
+		.container{
+			width: 60%;
+			background: green;
+			margin: 0 auto;
+		}
+		.div{
+			width: 200px;
+			height: 300px;
+			margin: 0 auto;
+			background: #fff;
+			position: relative;
+		}
+		.div a{
+			font-size: 0px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 900;
+		}
+	    .falsoLink{
+	      font-size: 0px;
+	      position: absolute;
+	      top: 0;
+	      bottom: 0;
+	      left: 0;
+	      right: 0;
+	    }
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="padre">
+			<iframe src="https://www.youtube.com/embed/M6-_7OVxHF4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<hr>
+		<div class="div">
+			<a href="#">asdsad</a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eligendi aliquid delectus vitae aperiam expedita autem itaque, dignissimos tempora perspiciatis obcaecati nobis, officia velit cupiditate eum, qui iusto quo in.</p>
+		</div>
+	</div>
+
+
+	
+</body>
+</html>

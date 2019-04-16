@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<ul class="ul1" style="background: lightblue"><strong>Bucle FOR</strong></ul>
+<ul class="ul2" style="background: red"><strong>Bucle FOR EACH</strong></ul>
+<ul class="ul3" style="background: lightyellow"><strong>Bucle FOR IN</strong></ul>
+<ul class="ul4" style="background: lightgrey"><strong>Bucle FOR OF</strong></ul>
+
+<div class="ul2" id="segundo">hola</div>
+<div class="ul2" id="tercero">hola</div>
+<span class="ul2" id="tercero">hola</span>
+
+<script>
+	$(document).ready(function(){
+
+		
+
+		let nombres = ["Luis", "Mario", "Juan", "Diana"];
+			nombres.numero = 10;
+
+
+
+	/*		FOR            ---------------------------------------------------------------------------------------------------------------------------
+			- Se puede utilizar continue o break.
+	*/ 
+
+		for (let i=0; i< nombres.length; i++){
+		/*
+			if(nombres[i]=="Mario"){
+				break; //Salta ese elemento y sale del loop
+			}
+		*/
+			if(nombres[i]=="Juan"){
+				continue; //Salta ese elemento y sique por el loop
+			}
+			
+			var lista1 = document.createElement("li");
+			lista1.innerHTML = nombres[i];
+			document.querySelector(".ul1").appendChild(lista1);	
+		}
+
+
+
+
+	/*		FOREACH            ---------------------------------------------------------------------------------------------------------------------------
+			- Se le aplica función al array y se le pasa por parametro el elemento que va a recorrer el array
+			- No permite usar continue o break
+	*/ 
+		//nombres.forEach(function(nombre){
+		nombres.forEach((nombre) =>{
+			//console.log(nombre);
+
+			var lista2 = document.createElement("li");
+			lista2.innerHTML = nombre;
+			document.querySelector(".ul2").appendChild(lista2);
+		});
+	
+
+
+
+	/*		FOR IN            ---------------------------------------------------------------------------------------------------------------------------
+			- Se puede utilizar continue o break.
+			- Muestra el prototipo añadido al array, como un miembro más del array (nombres.numero).
+	*/ 
+
+		for(const index in nombres){
+			//console.log(index + (". ") + nombres[index])
+
+			var lista3 = document.createElement("li");
+			lista3.innerHTML = nombres[index];
+			document.querySelector(".ul3").appendChild(lista3);
+		}
+
+
+
+
+	/*		FOR OF            ---------------------------------------------------------------------------------------------------------------------------
+			- Se puede utilizar continue o break.
+			- No muestra el prototipo añadido al array.
+	*/ 
+
+		for(const index of nombres){
+			//console.log(index)
+			var lista4 = document.createElement("li");
+			lista4.innerHTML = index;
+			document.querySelector(".ul4").appendChild(lista4);
+		}
+
+
+
+		//querySelectorAll imprime nodelist de todos los elementos que contengan una clase determinada.
+		//querySelector imprime el primer elemento que tenga una clase en cuestión
+
+		let comproba1 = document.querySelectorAll(".ul2");
+		console.log(comproba1);
+
+		comproba1.forEach((index)=>{
+			console.log("Elemento " + index )
+		});
+
+		let comproba = document.querySelector(".ul2");
+		console.log(comproba);
+	})
+</script>
+</body>
+</html>

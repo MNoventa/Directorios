@@ -1,0 +1,30 @@
+#banner{
+	position: relative;
+	border: 5px solid #000;
+}
+
+#banner img{
+	width: 100%;
+}
+
+#banner	#textoBanner{
+	color:#fff;
+	text-shadow: 0 0 5px #000;
+	font-size: 30px;
+	position: absolute;
+
+	/*Situar el elemento en el centro, tienendo en cuenta su primera letra como 
+	punto de referencia.
+	*/
+
+	
+	top: 50%; /*Sitúa al elemento en el 50% con respecto a la vertical 
+	de su antecesor relative (es decir, en el centro de la vertical)*/
+	left: 50%; /*Sitúa al elemento en el 50% con respecto a la horizontal 
+	de su antecesor relative (es decir, en el centro centro de la horizontal)*/
+
+	/*Situar el elemento en el centro, tienendo en cuenta todo su "cuerpo"*/
+
+	transform: translateX(-50%) translateY(-50%); /*Centrado justo en el centro*/
+	
+}

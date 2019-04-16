@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	'use strict'
+
+	//Función declarada
+
+		//Las funciones declaradas son evaluadas antes que cualquier otra expresión. Incluso si la declaración se encuentra al final de todo un código fuente, ésta tendrá preferencia sobre aquellas expresiones que la precedan.
+
+	console.log( add( 3, 5 ) ); // 8
+	 
+	function add( x, y ){
+	  return x + y;
+	}
+
+
+
+	//Función expresada
+
+		//Si tratamos con funciones expresadas, éstas solo son evaluadas cuando el flujo natural de ejecución las alcanza.
+
+	console.log( add2( 3, 5 ) ); // ErrorType: add2 is not defined
+
+	var add2 = function( x, y ){
+	  return x + y;
+	}
+
+
+	/***/
+
+
+</script>
+<body>
+	
+</body>
+</html>

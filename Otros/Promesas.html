@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	
+$(document).ready(function(){
+
+	var msg = $("#msg");
+
+	try{
+		msg.text("Quiero un café");
+	
+		setTimeOut(function(){	
+			try{
+				msg
+			
+			}catch{
+				
+			}
+
+		},2000);
+
+
+		msg.text("Ya está listo su cafe");
+	
+	} catch(err){ //Se captura el error y se guarda en err (Lo que hay en throw).
+
+		msg.text(err); //Se coloca el mensaje de error (throw) en msg.
+	}
+	
+});
+
+
+
+</script>
+
+<style>		
+	h1{
+		text-align: center;
+	}
+	#msg{
+		text-align: center;
+		background: grey;
+		margin: 55px auto;
+		width: 400px;
+		padding: 20px;
+		font-size: 35px;
+	}
+</style>
+
+</head>
+<body>
+	
+	<h1>Promesas</h1>
+	<div id="msg">HOLA</div>
+
+</body>
+
+
+</html>
