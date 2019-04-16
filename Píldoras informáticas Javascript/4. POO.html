@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>POO</title>
+<link rel="stylesheet" href="micss2.css">
+
+</head>
+
+<body>
+
+	<input type="button" id="boton1">
+	<input type="button" id="boton2">
+	<input type="text" id="micuadro">
+
+	<script>
+		
+		var miboton=document.getElementById("boton1"); 
+		var miboton2=document.getElementById("boton2"); 
+		var cuadroTexto=document.getElementById("micuadro"); 
+
+		//MODIFICAR PROPIEDADES
+
+		miboton.style.width="300px"; //ancho
+		miboton.style.height="300px"; //alto
+		miboton2.style.width="300px"; //ancho
+		miboton2.style.height="300px"; //alto
+		cuadroTexto.style.background="red"; //color
+		//miboton.style.backgroundColor="#000"; //color
+		cuadroTexto.value="Escriba aquí"; //texto dentro del cuadro de texto
+		cuadroTexto.style.height="200px"; //alto
+
+		//MODIFICAR MÉTODOS
+
+		miboton2.focus(); //para darle más importancia con un resalte en azul
+
+	</script>
+
+</body>
+
+</html>

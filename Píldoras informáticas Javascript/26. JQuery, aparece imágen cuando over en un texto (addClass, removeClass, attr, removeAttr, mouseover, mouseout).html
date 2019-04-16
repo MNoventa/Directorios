@@ -1,0 +1,127 @@
+ <!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+
+#contenedor1 {
+	position: absolute;
+	left: 67px;
+	top: 177px;
+	width: 408px;
+	height: 298px;
+	z-index: 1;
+}
+#contenedor2 {
+	position: absolute;
+	left: 510px;
+	top: 176px;
+	width: 443px;
+	height: 297px;
+	z-index: 2;
+}
+
+ul{
+	list-style:none;
+	
+}
+li{
+	margin:10px 0;
+	font-size:24px;
+	width:95px;
+}
+
+.destacar{
+	background-color:#F00;
+	color:#FFF;
+}
+
+</style>
+
+
+<script>
+
+	$(document).ready(function(){
+
+		var elementos=document.querySelectorAll("li");
+
+		for(var i=0; i<elementos.length; i++){
+
+			elementos[i].addEventListener("mouseover", aparece_imagen, false);
+			elementos[i].addEventListener("mouseout", desaparece_imagen, false);
+		}
+	});
+
+	function aparece_imagen(e){
+
+		if(e.target==messi){
+
+			$("#messi").addClass("destacar");
+			$("img").attr("src", "img/messi.jpeg");
+
+		}else if(e.target==dembele){
+
+			$("#dembele").addClass("destacar");
+			$("img").attr("src", "img/dembele.jpg");
+
+		}else if(e.target==iniesta){
+
+			$("#iniesta").addClass("destacar");
+			$("img").attr("src", "img/iniesta.jpg");
+			
+		}else if(e.target==umtiti){
+
+			$("#umtiti").addClass("destacar");
+			$("img").attr("src", "img/umtiti.jpg");			
+		}
+	}
+
+	function desaparece_imagen(e){
+
+		if(e.target==messi){
+
+			$("#messi").removeClass("destacar");
+			$("img").removeAttr("src", "img/messi.jpeg");
+
+		}else if(e.target==dembele){
+
+			$("#dembele").removeClass("destacar");
+			$("img").removeAttr("src", "img/dembele.jpg");
+
+		}else if(e.target==iniesta){
+
+			$("#iniesta").removeClass("destacar");
+			$("img").removeAttr("src", "img/iniesta.jpg");
+			
+		}else if(e.target==umtiti){
+
+			$("#umtiti").removeClass("destacar");
+			$("img").removeAttr("src", "img/umtiti.jpg");			
+		}
+	}
+
+</script>
+
+</head>
+
+<body>
+<div id="contenedor1">
+
+<ul>
+
+<li id="messi">Imagen Messi</li>
+<li id="dembele">Imagen Dembele</li>
+<li id="iniesta">Imagen Iniesta</li>
+<li id="umtiti">Imagen Umtiti</li>
+
+</ul>
+</div>
+<div id="contenedor2">
+<img src="">
+</div>
+
+</body>
+</html>

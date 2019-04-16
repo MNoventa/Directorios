@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+	$(document).ready(function(){
+
+		document.getElementById("img1").addEventListener("mouseover", cambiar, false);
+		document.getElementById("img1").addEventListener("mouseout", restaurar, false);
+
+	});
+
+	function cambiar(){
+
+		$("img").attr("src","img/iniesta.jpg"); //Cuando se hace over en la imágen, va a cambiar la imagen de dembele por la de iniesta.
+	}
+
+	function restaurar(){
+		$("img").attr("src","img/dembele.jpg"); //Cuando se deja de hacer over en la imágen, va a cambiar la imagen de iniesta por la de dembele.
+	}
+
+</script>
+</head>
+
+<body>
+	
+	<img src="img/dembele.jpg" id="img1" alt="">
+
+</body>
+</html>

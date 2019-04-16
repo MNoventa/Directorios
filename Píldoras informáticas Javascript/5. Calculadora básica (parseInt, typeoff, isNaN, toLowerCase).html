@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculadora básica</title>
+<link rel="stylesheet" href="micss2.css">
+
+</head>
+
+<body>
+
+	<script>
+
+		var num1=prompt("Introduce el primer número con el que quieras operar");
+		var operador=prompt("Dime que quieres hacer: Sumar/restar/multiplicar/dividir").toLowerCase();
+		var num2=prompt("Introduce el segundo número con el que quieras operar");
+
+		//alert(typeof(num1)); //Nos devuelve el valor que hay en una variable
+
+		while(!isNaN(num1) && !isNaN(num2)) {
+
+			if (operador=="sumar" || "+"){
+				alert(parseInt(num1)+parseInt(num2));
+			}
+
+			else if (operador=="restar" || "-"){
+				alert(parseInt(num1)-parseInt(num2));
+			}
+
+			else if (operador=="multiplicar" || "*"){
+				alert(parseInt(num1)*parseInt(num2));
+			}
+			
+
+			else if (operador=="dividir" || "/"){
+				alert(parseInt(num1)/parseInt(num2));
+			}
+
+			else{
+				alert("No has puesto el operador correcto, tienes que poner: sumar,restar,multiplicar o dividir, y tu has puesto: " + operador); 
+			}
+		 }
+		 		//Si en vez de poner un número, han puesto un string:
+		
+
+		 	if(typeof(num1)=="string" || typeof(num2)=="string"){                 
+
+		 		alert("Uno de los elementos introducidos, no es un número");
+		 	}
+		 
+
+		
+	</script>
+
+</body>
+
+</html>

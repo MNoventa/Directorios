@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+<script>
+
+	$(document).ready(function() {
+		
+		var foto_nueva=new Image(); //Cuando almacenamos en una variable, la ruta de una imágen, nos aseguramos que cuando el navegador cargue la página, ya esté cargada la imagen
+
+		foto_nueva.src="img/img atenuadas (25.1)/iniesta.jpg"
+		
+		$("#foto").hover(function(){
+			
+			$(this).attr("src","img/iniesta.jpg");
+			
+		},
+		function(){
+			
+			$(this).attr("src",foto_nueva.src);
+			
+			
+		});	
+		
+    });
+
+
+</script>
+</head>
+
+<body>
+
+<img src="img/img atenuadas (25.1)/iniesta.jpg" width="300" height="200" id="foto">
+</body>
+</html>

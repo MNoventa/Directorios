@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Introducción a eventos</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--https://www.youtube.com/watch?v=B4cBilORGWk&list=PLU8oAlHdN5BmpobVmj1IlneKlVLJ84TID&index=42-->
+<style>
+h1{
+	text-align:center;
+}
+body{
+	background-color:#334873;
+	color:#FFF;
+}
+
+#principal{
+	width:60%;
+	margin:auto;
+}
+
+a{
+	color:#FFF;
+	font:bold 20px Verdana, Geneva, sans-serif;
+} 
+</style>
+
+<script>
+
+	$(document).ready(function(){
+
+		$("html").dblclick(function(){
+
+			alert("ayyyyyyy");
+		});
+
+		$("a").mouseover(function(){ //Cada vez que se hace over en "un link", hace append de un texto debajo del formulario
+
+			var mensaje="<p>Estás pasando el ratón por encima del link</p>";
+
+			$("#principal").append(mensaje);
+		});
+
+		$("#el_boton").click(function(){ //Cuando se haga click en el boton se va a substituir su propio texto con la propiedad "val"
+
+			$(this).val("Para de hacer click!");
+		});
+
+		$("#el_campo").focus(function(){ //Cuando se hace focus en el campo de texto aparecerá un texto con la propiedad "val"
+
+			$(this).val("Ahora vas a escribir aqui");
+		});
+	});
+
+</script>
+
+</head>
+<body>
+
+	<div id="principal">
+
+		<h1>Introducción a eventos</h1>
+
+		<p><a href="#">Un link</a></p>
+
+		<form action="#" method="get">
+			<fieldset><legend>Formulario</legend>
+				<p>
+			  		<input name="button" type="button" id="el_boton" value="Un boton">
+				</p>
+				<p>	
+					<input name="textfield" type="text" id="el_campo">
+				</p>
+			</fieldset>
+		</form>
+
+	</div>
+
+
+</body>
+</html>

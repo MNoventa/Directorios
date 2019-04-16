@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>POO</title>
+<link rel="stylesheet" href="micss2.css">
+
+</head>
+
+<body>
+
+	<script>
+/*
+		var precioCoche=60000;
+
+		var dineroAhorrado=75000;
+
+		if(dineroAhorrado>=precioCoche){
+			alert("Puedes comprar el coche");
+		}
+
+		alert("Continuamos con la ejecución del programa");
+*/
+
+		var precioCoche=60000;
+
+		var dineroAhorrado= prompt("Cuánto dinero tienes?");
+
+		var edad= prompt("Cuántos años tienes?");
+
+		if(dineroAhorrado>=precioCoche && edad>=18){
+			alert("Puedes comprar el coche");
+		}
+
+		else if(edad<18){
+			alert("No tienes la suficiente edad");
+		}
+
+		else if(dineroAhorrado<precioCoche){
+			alert("No hay cash");
+		}
+
+
+		else{
+			alert("No puedes comprar el coche, no hay cash y no tienes la edad suficiente");
+		}
+
+		alert("Continuamos con la ejecución del programa");
+	</script>
+
+</body>
+
+</html>

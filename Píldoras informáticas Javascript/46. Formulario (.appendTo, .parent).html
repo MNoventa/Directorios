@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulario desmadre</title>
+
+<style>
+
+html , body{
+	
+	background-color:#036;
+	
+}
+
+.contenido {
+	max-width: 760px;
+	margin: 20px 0 0 100px;
+}
+
+.cont_principal{
+	margin:auto;
+	width:50%;
+}
+
+.logo {
+	letter-spacing: -1px;
+	color:#FC6;
+	text-shadow: 2px 2px 1px rgba(0,0,0,.25);
+	font: normal 54px 'ColaborateThinRegular', Arial, sans-serif;
+}
+
+
+.principal {
+	
+	border-bottom: solid 1px rgba(255,255,255,.5);
+	
+}
+
+.principal h1 {
+	font-size: 32px;
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+	border-bottom: solid 1px rgba(255,255,255,.5);
+	
+}
+
+p , li, legend , form{
+	font-size: 18px;
+	color: white;
+	font-family: 'ColaborateLightRegular', Arial, sans-serif;
+	line-height: 125%;
+	margin-bottom: 10px;
+}
+
+input {
+	font-size: 20px;
+}
+
+form .wide {
+	font-size: 18px;
+	width: 100%;
+}
+
+form#order div, form#form_registro div{
+	padding-bottom: 10px;	
+}
+
+
+form#form_registro .label {
+	width: 200px;	
+}
+
+form#order .label, form#form_registro .label {
+	display: block;
+	clear: left;
+	float: left;
+	width: 175px;
+	text-align: right;
+	padding: 7px 15px 0 0;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+
+form#order select, form#form_registro select {
+	display: inline-block;
+	margin-top: 8px;	
+}
+
+form#order input[type="radio"], form#form_registro input[type="radio"], form#form_registro input[type="checkbox"] {
+   display: inline-block;
+   margin-top: 10px;	
+}
+
+form .indent, #submit {
+	margin-left: 215px;	
+}
+
+#form_registro .indent label.error {
+  margin-left: 0;
+}
+
+#form_registro label.error{ /*Apuntamos dentro del formulario, en los mensajes de error de los elementos label */
+
+}
+
+#prueba{
+	margin:auto;
+	width: 30%;
+	background-color: #fff;
+}
+
+#prueba label{
+display: block;
+float: left;
+width: 175px;
+text-align: right;
+padding: 7px 15px 0 0;
+text-transform: uppercase;
+	font-weight: bold;
+}
+
+
+</style>
+<script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+<script src="Librerias JQuery/jquery.validation.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+	
+	$("#form_registro").validate({
+
+		rules:{
+			e_mail:{
+				required: true,
+				email: true
+			},
+
+			password:{
+				required: true,
+				rangelength: [8, 16], //Caracteres permitidos entre un numero y otro (no confundir con range a secas)
+			},
+
+			confirma: {
+				equalTo:"#password" //Con esta propiedad nos permite definir una propediad con la que tiene que ser igual, confirma password tiene que ser igual que password
+			}
+
+		},
+
+		messages:{
+			e_mail:{
+				required: "Introduce email, por favor",
+				email: "El formato es incorrecto"
+			},
+
+			password:{
+				required: "Introduce una contraseña",
+				rangelength: "Entre 8 y 16 caracteres",
+			},
+
+			confirma: {
+				equalTo:"No coiniden los campos",
+			}
+		},
+
+		errorPlacement: function (error, element){ //Validación para modificar la ubicación de los mensajes de error
+			if (element.is(":radio") || element.is(":checkbox")){
+
+				error.appendTo(element.parent()) //appendTo: Agregar un 'elemento' donde le indiquemos por parametro. Ubicación: En el elemento padre de 'element'.
+			
+			}else{ //Si es un cuadro de texto o un menú desplegable
+
+				error.insertAfter(element); //Detras del elemento que da el error (textarea, por ejemplo)
+			}
+
+		}
+
+
+	});
+}); 
+</script>
+</head>
+<body>
+<div class="cont_principal">
+	<div class="cabecera">
+		<p class="logo">Píldoras informáticas</p>
+	</div>
+	<div class="contenido">
+	<div class="principal">
+	<h1>Rellenar</h1>
+		<form name="form_registro" id="form_registro">
+			<div>
+				<label for="nombre" class="label">NOMBRE </label>
+				<input name="nombre" type="text" id="nombre" class="required" title="Obligatorio">
+			</div>
+			<div>
+				<label for="email" class="label">E-mail </label>
+				<input name="e_mail" type="text" id="e_mail">
+			</div>
+			<div>
+				<label for="password" class="label">CONTRASEÑA</label>
+				<input name="password" type="password" id="password">
+			</div>
+			<div>
+				<label for="confirma" class="label">ConfirmA CONTRA</label>
+				<input name="confirma" type="password" id="confirma">
+			</div>
+			<div><span class="label">aficiones</span>
+				<input name="hobby" type="checkbox" id="comer" value="comer" class="required" title="Selecciona al menos un elemento">
+				Comer
+				<input name="hobby" type="checkbox" id="Beber" value="Beber">
+				<label for="Beber">Beber</label>
+				<input name="hobby" type="checkbox" id="Dormir" value="Dormir">
+				<label for="Dormir">Dormir</label></div>
+			<div>
+				<label for="fecha" class="label">FECHA NACIMIENTO</label>
+				<input name="fecha" type="text" id="fecha" class="date" title="Utiliza formato MM/DD/AAAA">
+			</div>
+			<div>
+				<label for="planeta" class="label">PlanetA </label>
+				<select name="planeta" id="planeta" class="required" title="Escoge planeta de nacimiento">
+					<option value="">--Por favor, selecciona--</option>
+					<option value="tierra">Tierra</option>
+					<option value="marte">Marte</option>
+					<option value="ganimedes">Ganímedes</option>
+					<option value="No me suena nada">No me suena nada</option>
+				</select>
+			</div>
+			<div>
+				<label for="comentarios" class="label">COMENTARIOS</label>
+				<textarea name="comentarios" cols="15" rows="5" id="comentarios"></textarea>
+			</div>
+			<div class="labelBlock">¿DESEAS RECIBIR CORREO BASURA DE NUESTRA PARTE? </div>
+			<div class="indent">
+				<input  type="radio" name="spam" id="yes" value="yes" class="required" title="Selecciona una opción">
+				<label for="si">Sí</label>
+				<input type="radio" name="spam" id="Por_supuesto" value="Por_supuesto">
+				<label for="definitely">Por supuesto</label>
+				<input type="radio" name="spam" id="eleccion" value="eleccion">
+				<label for="eleccion">¿Tengo elección?</label>
+			</div>
+			<div>
+				<input type="submit" name="submit" id="submit" value="Enviar">
+			</div>
+		</form>
+		</div>
+	</div>
+
+
+	
+</div>
+
+	<div id="prueba">
+
+		<h1>Cómo alinear alinear el input text al centro de la pantalla</h1>
+			<div>
+				<label for="nombre" class="label">NOMBRE </label>
+				<input name="nombre" type="text" class="objeto"  >
+			</div>
+			<div>
+				<label for="nombre" class="label">JIAHSNFIJDSDAIJF </label>
+				<input name="nombre" type="text" class="objeto"  >
+			</div>
+			<div>
+				<label for="nombre" class="label">NOSDFSDMBRE </label>
+				<input name="nombre" type="text" class="objeto"  >
+			</div>
+			<div>
+				<label for="nombre" class="label">N </label>
+				<input name="nombre" type="text" class="objeto"  >
+			</div>
+	</div>
+</body>
+</html>

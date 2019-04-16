@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style type="text/css">
+body {
+	background-color: #06C;
+}
+h1{
+	text-align:center;
+	color:#FFF;
+	font-weight:bold;
+}
+
+#contenedor{
+	background-color:#06C;
+	width:500px;
+	height:400px;
+	margin:auto;
+	
+}
+</style>
+<script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+
+<script>
+	$(document).ready(function(){
+
+		
+
+		$("#pulsar").click(function(e){
+			e.preventDefault();
+			$("#externo").attr("src", "http://pildorasinformaticas.com");//El metodo attr tiene 2 atributos: el elemento del objeto al que se quiere modificar, y por qué se va a modificar
+
+		});
+	});
+
+</script>
+</head>
+
+<body>
+<h1> Píldoras informáticas</h1>
+<a href="" id="pulsar">Pulsa</a>
+<div id="contenedor"><iframe src="" width="500" height="400" id="externo" frameborder="0"></iframe></div> <!--Con frameborder 0 le quita los marcos al frame-->
+
+</body>
+</html>

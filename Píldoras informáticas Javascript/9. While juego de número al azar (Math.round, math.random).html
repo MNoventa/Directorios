@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Juego de escoger un número</title>
+<link rel="stylesheet" href="micss2.css">
+
+<script>
+	
+	var aleatorio=Math.round(Math.random()*100); //Math.random da a la variable un valor aleatorio entre 0 y 1. Como lo multiplicamos será entre 0 y 100. Math.round nos redondea el numero quitando los decimales
+	numintroducido=prompt("Yo escogeré un número entre el 0 y el 100 sin que tu sepas cuál es. Tienes 6 intentos para adivinar el número.");
+	intentos=6;
+
+
+	while(numintroducido!=aleatorio && intentos!=0){
+		if(numintroducido<aleatorio){
+			alert("Te quedan: " + intentos + " intentos");
+			alert("Tu número es menor, sigue intentando");
+			numintroducido=prompt("Introduce otro número");
+			intentos--;
+			
+		}
+
+		else if(numintroducido>aleatorio){
+			alert("Te quedan: " + intentos + " intentos");
+			alert("Tu número es mayor, sigue intentando")
+			numintroducido=prompt("Introduce otro número");
+			intentos--;
+			
+		}
+	}
+
+	if(intentos==0){
+		alert("Lo siento, te has quedado sin intentos, el número era: " + aleatorio); 
+	}
+	else if(numintroducido==aleatorio){
+		alert("Correcto, el número es: " + aleatorio); 
+	}
+	
+</script>
+
+</head>
+
+
+
+<body>
+
+
+</body>
+
+</html>

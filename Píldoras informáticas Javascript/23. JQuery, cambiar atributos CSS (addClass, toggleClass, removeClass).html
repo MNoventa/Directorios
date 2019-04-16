@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+
+.linkdestacacursos{
+	background-color:#F00;
+	
+}
+
+a{
+	display:block;
+	margin-bottom:20px;
+	font-size:24px;
+}
+
+table{
+	text-align:center;
+	border:none;
+}
+
+td{
+	border:none;
+}
+
+#contieneEnlaces {
+	position: absolute;
+	left: 31px;
+	top: 65px;
+	width: 400px;
+	height: 649px;
+	z-index: 1;
+	padding-top:100px;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	
+	$(document).ready(function(){
+
+		document.getElementById("botoncursos").addEventListener("click", resaltacursos, false);
+
+		document.getElementById("botoninformacion").addEventListener("click", resaltaejemplos, false);
+	});
+
+	function resaltacursos(){
+
+		//$("a[href^='https://']").addClass("linkdestacacursos"); //Le agrega a TODOS LOS ENLACES de tipo https la clase .linkdestacacursos
+
+		$(".cursos").addClass("linkdestacacursos");
+		$(".ejemplos").removeClass("linkdestacacursos");
+	}
+
+	function resaltaejemplos(){
+
+		$(".ejemplos").addClass("linkdestacacursos");
+		$(".cursos").removeClass("linkdestacacursos");
+	}
+
+</script>
+</head>
+
+<body>
+
+<div id="contieneEnlaces">
+
+<a href="http://www.pildorasinformaticas.com" target="_blank" class="cursos">
+Píldoras informáticas
+</a><br>
+
+<a href="http://www.google.com" target="_blank" class="ejemplos">
+Google
+</a><br>
+
+<a href="https://www.youtube.com/user/pildorasinformaticas" target="_blank" class="cursos">
+Píldoras informáticas YouTube
+</a><br>
+
+<a href="remover_reemplazar.html" target="_blank" >
+Remover y reemplazar
+</a><br>
+
+<a href="https://news.google.es/" target="_blank" class="ejemplos">
+Noticias google
+</a><br>
+
+<a href="calculadora_arcaica.html" target="_blank" >
+Calculadora
+</a>
+</div>
+
+<table width="100%" border="1">
+<tr>
+<td>Cursos destacados&nbsp;&nbsp;<input type="button"  value="Cursos" id="botoncursos"></td>
+<td>Información adicional&nbsp;&nbsp;<input type="button"  value="Información" id="botoninformacion"></td>
+</tr>
+
+
+
+
+</body>
+</html>

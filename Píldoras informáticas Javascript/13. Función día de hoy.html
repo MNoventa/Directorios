@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Función día de hoy</title>
+
+
+<script>
+	function dia_de_hoy(){
+
+		var hoy=new Date(); //Guarda la fecha en la variable y te la escribe en la pantalla abajo:
+		document.write(hoy.toDateString()); //toDateString nos muestra una fecha más corta
+
+	}
+
+</script>
+
+</head>
+
+<body>
+
+	<h1>¿Y qué día es hoy?</h1>
+
+	<p>Hoy es día: <script>dia_de_hoy();</script></p>
+
+</body>
+
+</html>

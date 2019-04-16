@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+table{
+	text-align:center;
+	width:50%;
+	border:none;
+	margin:auto;
+}
+
+img{
+	padding:0 5px;
+}
+h1{
+	text-align:center;
+}
+
+</style>
+
+<script>
+
+	$(document).ready(function(){
+
+		var elementos=document.querySelectorAll("img");
+
+		for(var i=0; i<elementos.length; i++){
+
+			elementos[i].addEventListener("mouseover",cambiar,false);
+			elementos[i].addEventListener("mouseout",reestablecer,false);
+		}
+	});
+
+	function cambiar(e){
+
+
+		if(e.target==img1){
+
+			$("#img1").attr("src", "img/dembele.jpg");
+
+		}else if(e.target==img2){
+
+			$("#img2").attr("src", "img/messi.jpeg");
+
+		}else if(e.target==img3){
+
+			$("#img3").attr("src", "img/iniesta.jpg");
+
+		}else if(e.target==img4){
+
+			$("#img4").attr("src", "img/umtiti.jpg");
+		}
+
+	}
+
+	function reestablecer(e){
+
+
+		if(e.target==img1){
+
+			$("#img1").attr("src", "img/img atenuadas (25.1)/dembele.jpg");
+
+		}else if(e.target==img2){
+
+			$("#img2").attr("src", "img/img atenuadas (25.1)/messi.jpg");
+
+		}else if(e.target==img3){
+
+			$("#img3").attr("src", "img/img atenuadas (25.1)/iniesta.jpg");
+
+		}else if(e.target==img4){
+
+			$("#img4").attr("src", "img/img atenuadas (25.1)/umtiti.jpg");
+		}
+
+	}
+
+</script>
+</head>
+
+<body>
+<h1>Galería de img</h1>
+<table width="100%" border="0">
+  <tr>
+    <td><img src="img/img atenuadas (25.1)/dembele.jpg" id="img1" width="280px"></td>
+    <td><img src="img/img atenuadas (25.1)/messi.jpg" id="img2" width="280px"></td>
+    <td><img src="img/img atenuadas (25.1)/iniesta.jpg" id="img3" width="280px"></td>
+    <td><img src="img/img atenuadas (25.1)/umtiti.jpg" id="img4" width="280px"></td>
+  </tr>
+</table>
+</body>
+</html>

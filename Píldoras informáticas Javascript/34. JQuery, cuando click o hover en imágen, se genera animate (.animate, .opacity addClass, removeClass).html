@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+.opacidad{
+	opacity:0.5;
+}
+
+
+</style>
+<script src="Jquery/jquery-1.6.3.min.js"></script>
+<script>
+
+$(document).ready(function() {
+	$("#imagen1").click(function(){
+		$(this).animate(
+		{	
+			marginLeft:"+=150px" //Con esto conseguimos que la imagen se desplace cada vez que hacemos click, 50px desde la izquierda.
+		},950) //Tiempo en el cual se va a producir la animacion
+	});
+
+
+
+
+		//QUITAR LA OPACIDAD DE LA IMAGEN sin animate:
+
+		$("#imagen").mouseover(function(){
+				$(this).removeClass("opacidad");
+		});	
+
+		$("#imagen").mouseout(function(){
+				$(this).addClass("opacidad");
+		});
+		
+
+		//QUITAR LA OPACIDAD DE LA IMAGEN con animate:
+
+		$("#imagen2").mouseover(function(){
+			$(this).animate(
+
+				{
+					opacity:1
+				},500
+			);
+		});	
+
+		$("#imagen2").mouseout(function(){
+			$(this).animate(
+
+				{
+					opacity:0.5
+				},500
+			);
+		});	
+});
+
+
+</script>
+</head>
+
+<body>
+<img src="img/coche.png" width="150" height="150" id="imagen1">
+<br>	
+<img src="img/dembele.jpg" width="250" height="150" id="imagen" class="opacidad">
+
+<img src="img/iniesta.jpg" width="250" height="150" id="imagen2" class="opacidad">
+
+</body>
+</html>

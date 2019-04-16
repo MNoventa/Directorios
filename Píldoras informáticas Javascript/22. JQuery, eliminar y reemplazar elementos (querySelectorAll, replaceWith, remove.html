@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+	
+	#banner{
+
+	background-color:#f00;
+	width:450px;
+	height:300px;
+	position:absolute;
+	left:400px;
+	top:50px;
+	font-size:36px;
+	text-align:center;
+
+	}
+
+	img{
+
+		float:left;
+		margin:15px;
+		width:350px;
+		height:200px;
+
+	}
+	
+	#sustitucion{
+
+		float:left;
+		margin:15px;
+		width:350px;
+		height:200px;
+		font-size: 36px;
+	}
+
+
+</style>
+
+<script>
+	
+	$(document).ready(function(){
+/*
+		var z=document.getElementById("cerrar"); //Asigna en una variable el valor "cerrar"
+
+		//z.addEventListener("click", cerrar_banner, false); //Ponemos a "cerrar" o "z" a la escucha para que cuando se haga click en el, llame a la funcion "cerrar_banner"
+
+--------------------------------------------------------------
+
+		/* TODO LO ANTERIOR SE PUEDE SIMPLIFICAR DE LA SIGUIENTE FORMA (FUNCIÓN ENCADENADA):
+*/
+		document.getElementById("cerrar").addEventListener("click", cerrar_banner, false);
+	
+/* 		SE UTILIZARÍA LO SIGUIENTE PARA SELECCIONAR UNICAMENTE UN ELEMENTO:	
+
+		document.getElementById("imagen1").addEventListener("click", carrito, false);
+*/		
+
+//		Y LO SIGUIENTE PARA SELECCIONAR TODOS LOS ELEMENTOS IMG DENTRO DEL DIV 				#CARRETE (Lo que sería una array):
+
+		var imagenes=document.querySelectorAll("#carrete img");
+
+		for(var i=0; imagenes.length; i++){
+
+			imagenes[i].addEventListener("click", carrito, false); //Se producirá el evento "click", y se llamará a la función "carrito".
+		}
+
+	});
+
+	function cerrar_banner(){  
+
+		$("#banner").remove(); //cierra el banner
+	}
+
+	function carrito(num){ //Cuando se realiza un evento, se genera un nuevo objeto llamado: objeto e (o objeto de tipo evento). Con el parámetro "num" conseguimos capturar el valor del objeto evento.
+
+	if(num.target==imagen1){ //Con target nos devuelve cual es el objeto que ha desencadenado el evento. Si el causante del evento es imagen1 (se clica en imagen 1), el valor de target será: imagen1.
+
+		$("#imagen1").replaceWith("<div id='sustitucion'>Agregado al carro</div>");
+	}
+
+	else if(num.target==imagen2){ 
+
+		$("#imagen2").replaceWith("<div id='sustitucion'>Agregado al carro</div>");
+	}
+
+	else if(num.target==imagen3){ 
+
+		$("#imagen3").replaceWith("<div id='sustitucion'>Agregado al carro</div>");
+	}
+}
+
+</script>
+
+</head>
+
+
+<body>
+	
+	<div id="banner">
+		Banner de prueba
+		<p id="cerrar">Cerrar</p>
+	</div>
+
+	<div id="carrete">
+		<img src="img/dembele.jpg" id="imagen1" alt="">
+		<img src="img/messi.jpeg" id="imagen2" alt="">
+		<img src="img/iniesta.jpg" id="imagen3" alt="">
+	</div>
+	
+
+</body>
+</html>

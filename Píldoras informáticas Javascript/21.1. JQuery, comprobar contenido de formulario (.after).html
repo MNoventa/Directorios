@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OBJETO WINDOW - ventanas</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+	
+	.micontenedor{
+
+		background-color: #C9CCCE;
+	}
+
+</style>
+<script>
+/*
+	$(document).ready(function(){
+
+		alert($("#errores").html()); 
+
+			//Aparece un alert y te dice el contenido que tiene el div #errores en su interior. Sale: <h2>Errores<h2>.
+
+		alert($("#errores h2").html()); 
+
+			//Aparece un alert y te dice el contenido que tiene el div #errores en su interior, dentro del h2. Sale: Errores.
+
+		$("#html").html("<p>Utilizando .html</p>"); 
+			//Substituye el contendio que hay dentro del div #errores.
+
+		$("#text").text("<p>Utilizando .text</p>"); 
+			//Substituye el contendio que hay dentro del div #errores, pero respetando los <p> (Se ven las etiquetas en pantalla). Si no queremos que se vean, hay que quitarlas: .text("Hay errores en el formulario").
+		
+		$("#append").append("<p>Utilizando .append</p>");
+			//Agrega el contenido que se haya puesto dentro de append A CONTINUACIÓN de todo lo que hay dentro del div #errores.
+
+		$("#prepend").prepend("<p>Utilizando .prepend</p>");
+			//Agrega el contenido que se haya puesto dentro de prepend ANTES de todo lo que hay dentro del div #errores.
+
+		$("#after").after("<p>Utilizando .after</p>");
+			//Agrega el contenido que se haya puesto dentro de after A CONTINUACIÓN del div en el que estamos apuntando.
+
+		$("#before").before("<p>Utilizando .before</p>");
+			//Agrega el contenido que se haya puesto dentro de before ANTES del div en el que estamos apuntando.
+		
+	});
+
+*/
+
+	function validar(){
+
+		var n_usuario=document.getElementById("usuario").value;
+
+			if(n_usuario==""){
+
+				$("#usuario").after("Rellena este campo, por favor");
+			}
+	}
+
+</script>
+
+</head>
+
+
+<body>
+
+	<form action="" method="get">
+		
+		<input type="text" id="usuario"><br>
+		<input type="text" id="nombre"><br>
+		<input type="text" id="apellido"><br>
+		<input type="button" value="Haz click" onclick="validar()">
+
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Efecto anidadas</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+#titulo{
+	margin-left:150px;
+}
+
+#foto p{
+	background-color:#000;
+	color:#FFF;
+	font-size:24px;
+	font-weight:bold;
+	width:300px;
+	text-align: center;
+}
+h1{
+	text-align:center;
+}
+
+</style>
+
+<script>
+
+$(document).ready(function() {
+	
+	$("#titulo").hide();
+	$("#desapareceImagen").hide();
+
+	var estaAmpliada=false
+
+	
+	
+		$("#foto img").width(60).height(40).click(function(){ //Función encadenada
+
+			$(this).animate(
+			{
+				
+				marginLeft:"150px",
+				width:"300px",
+				height:"200px"
+
+			},1500, function(){ //Función anidada
+
+				$("#titulo").fadeIn(1000).delay(1000).fadeOut(1000); //El titulo aparece haciendo fadeIn, espera un segundo de delay, y vuelve a desaparecer con fadeOut
+				$("#desapareceImagen").animate(
+					{
+						
+						marginLeft:"250px",
+	
+					});
+				$("#desapareceImagen").fadeIn();
+			});
+		});
+
+	
+
+		$("#desapareceImagen").click(function(){
+
+			$("#foto img").animate(
+			{
+				
+				marginLeft:"5px",
+				width:"60px",
+				height:"40px"
+
+			});
+
+			$("#desapareceImagen").hide();
+			$("#titulo").hide();
+			
+		});
+});
+
+</script>
+
+</head>
+
+<body>
+<h1>
+
+Prueba imagen
+
+</h1>
+
+<div id="foto">
+	
+
+		<img src="img/iniesta.jpg" width="330" height="200" id="imagen1">
+
+		<p id="titulo">Iniesta</p>
+		
+		<br><br>
+		<input type="button" id="desapareceImagen" value="Cierra imagen">
+
+	
+</div>
+
+</body>
+</html>

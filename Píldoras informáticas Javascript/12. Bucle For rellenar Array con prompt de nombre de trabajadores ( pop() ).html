@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bucle For nombre de trabajadores</title>
+
+
+<script>
+	var Trabajadores=new Array(); //Array indeterminada
+	var persona="";
+	var contador=0;
+
+	while(persona!="salir"){
+		persona=prompt("Introduce trabajador");
+
+		Trabajadores[contador]=persona;
+
+		contador++;
+	}
+
+	Trabajadores.pop(); //Borra la última posición del array para que no aparezca "salir"
+
+	for(var i=0; i<Trabajadores.length; i++){
+		document.write(Trabajadores[i] + "<br>");
+	}
+
+</script>
+
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculadora básica</title>
+<link rel="stylesheet" href="micss2.css">
+
+<style>
+
+	#contenedor{
+		width: 25%;
+		background-color: #FFC;
+		margin: auto;
+		padding:15px;
+	}
+
+</style>
+
+<script>
+
+	var nombre, edad, poblacion;
+
+	nombre=prompt("Introduce tu nombre por favor","Escribe aquí");	
+
+	//isNaN = is Not a Number
+
+	while(!isNaN(nombre)){
+		nombre=prompt("Nombre no válido, vuelva a introducirlo","Escribe aquí");
+	}
+
+	edad=prompt("Introduce tu edad por favor","Escribe aquí");
+	
+	while(isNaN(edad) || edad<=0 || edad>105){
+		edad=prompt("Edad no válida, vuelva a introducirla","Escribe aquí");
+	}
+	
+	poblacion=prompt("Introduce tu población por favor","Escribe aquí");
+
+	while(!isNaN(poblacion)){
+		poblacion=prompt("Población no válida, vuelva a introducirla","Escribe aquí");
+	}
+	
+
+</script>
+
+</head>
+
+<body>
+
+	<div id="contenedor">
+
+		<p><b>Nombre:</b></p>
+
+			<script>
+				document.write(nombre);
+			</script>
+
+		<p><b>Edad:</b></p>
+
+			<script>
+				document.write(edad);
+			</script>
+
+		<p><b>Población:</b></p>
+
+			<script>
+				document.write(poblacion);
+			</script>
+
+	</div>
+
+</body>
+
+</html>

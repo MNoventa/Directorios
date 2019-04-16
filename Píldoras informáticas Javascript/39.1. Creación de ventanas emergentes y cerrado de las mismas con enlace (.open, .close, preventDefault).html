@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+<script>
+	
+	/*Se pueden crear tantas emergentes como open en el codigo queramos poner
+	open("http://www.pildorasinformaticas.es", "Pildoras", "width=300, height=200, left=300, top=300")
+	*/
+	$(document).ready(function(){
+		var ventanaEmergente= "width=300, height=200, left=20, top=20";
+		var miVentana= open("http://www.pildorasinformaticas.es", "Pildoras2", ventanaEmergente)
+
+		$("#botonCerrar").click(function(e){
+			e.preventDefault(); //Cuando se hace click en botonCerrar, se está haciendo click en un vinculo que no conduce a ningun sitio. Como es un vinculo, la pagina se tiene que actualizar porque, se está haciendo click en un vinculo que deberia de ir a alguna parte. Cuando se hace click en el vinculo, se actualiza la página y vuelve a aparecer la ventana emergente de arriba. Para que no haga caso a la función por defecto, que es refrescar la página, se anula con preventDefault a la característica del vinculo, y no refresca la página, y entonces, la ventana emergente, se cierra.
+			miVentana.close();
+
+		});
+	});
+	
+
+	
+</script>
+</head>
+
+<body>
+<a href="http://www.pildorasinformaticas.es">Ir a Píldoras</a>
+<br><br><br>
+<a href="" id="botonCerrar">Cerrar</a>
+</body>
+</html>

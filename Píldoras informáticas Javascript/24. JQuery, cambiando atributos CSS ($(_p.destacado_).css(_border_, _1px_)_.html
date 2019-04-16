@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+	
+	#primer_parrafo{
+
+		background-color: #f00;
+	}
+
+</style>
+
+<script>
+	
+	$(document).ready(function(){
+
+		var colorFondo=$("#primer_parrafo").css("background-color"); //De esta forma, se va a guardar dentro de primer_parrafo (colorFondo), la propiedad background-color, dentro del elemento css #primer_parrafo
+
+		alert(colorFondo); //Nos muestra qué hay dentro de la variable colorFondo.
+
+		//$("p.destacado").css("background-color", "#f00");
+
+		$("p.destacado").css("border", "1px dotted blue");
+
+	});
+
+</script>
+
+</head>
+
+<body>
+
+	<p id="primer_parrafo">Primer párrafo</p>
+
+	<p class="destacado">Párrafo destacado</p>
+
+	<p>Tercer párrafo</p>
+
+</body>
+</html>

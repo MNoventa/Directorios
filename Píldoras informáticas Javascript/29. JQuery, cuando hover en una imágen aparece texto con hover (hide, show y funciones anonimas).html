@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--https://www.youtube.com/watch?v=bBJhs6On7Gk&index=43&list=PLU8oAlHdN5BmpobVmj1IlneKlVLJ84TID-->
+<style>
+
+#imagenes{
+	width:1475px;
+	margin:auto;
+	
+}
+img{
+	padding:20px 30px;
+}
+
+#mensaje_img1 {
+	position: absolute;
+	left: 623px;
+	top: 392px;
+	width: 581px;
+	height: 215px;
+	background-color: #FF9;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 25px;
+	border: dotted 2px #00F;
+}
+</style>
+
+<script>
+
+	$(document).ready(function(){
+
+		$("#mensaje_img1").hide();
+
+		$("#imagen1").hover(mensaje_on, mensaje_off); //Dentro de hover, llama a dos funciones: handlerIn (qué pasará cuando estemos encima del elemento, llamada como mensaje_on), handlerOut(qué pasará cuando dejemos de estar en él, llamada mensaje_off)
+
+	});
+
+	function mensaje_on(){
+
+		$("#mensaje_img1").show(); //Con show hace que aparezca el div en cuestión.
+	}
+
+	function mensaje_off(){
+
+		$("#mensaje_img1").hide(); //Con hide hace que desaparezca el div en cuestión.
+	}
+
+</script>
+
+</head>
+
+<body>
+
+<div id="mensaje_img1">Preciosa encina en mitad de la meseta castellana......</div>
+<div id="imagenes">
+
+<img src="img/dembele.jpg" width="300px" id="imagen1">
+<img src="img/iniesta.jpg" width="300px" id="imagen2">
+<img src="img/messi.jpeg" width="300px" id="imagen3">
+<img src="img/umtiti.jpg" width="300px" id="imagen4">
+
+
+
+</div>
+</body>
+</html>

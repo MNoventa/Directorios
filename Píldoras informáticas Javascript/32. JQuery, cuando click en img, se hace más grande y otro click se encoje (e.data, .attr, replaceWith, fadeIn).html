@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+table{
+	text-align:center;
+float:right;
+margin-right:50px;
+
+}
+p{
+	font-size:1.3em;
+}
+
+
+#imagen_grande {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	width: 700px;
+	height: 405px;
+	z-index: 1;
+	border:dotted 5px #0000FF;
+	/*background-color: #FF0000;*/
+}
+</style>
+
+
+<script>
+
+$(document).ready(function(){
+
+	var imagenDembele= $("#imagen1").attr("src"); //Se almacena en la variable la RUTA de la imagen1
+
+	$("#imagen_grande").hide();
+
+	$("#imagen1").bind("click", imagenDembele, abreimagen); //Cuando se hace click en #imagen1, se llama a la función abreimagen, y se le pasa la información que hay almacenada en imagenDembele, que es la ruta.
+
+	function abreimagen(e){
+		e.stopPropagation(); //Le decimos que el evento no se propague para objetos que también hacen que cuando se hace click en la imágen, le aplique un método. (como la funcion de abajo). Como la función de abajo, dice que cuando hacemos click en el documento, se va a aplicar fadeOut a la imágen, cuando hacemos click en imagen, también se está llamando a la función de abajo. Con e.stopPropagation hacemos que eso no pase.
+		$("#imagen_grande").fadeIn(1000);
+		$("#img_sustitucion").replaceWith("<img src='" + e.data + "'width='700' height='405'>");
+	}
+
+	$(document).bind("click keypress", function(){
+		$("#imagen_grande").fadeOut(1000);
+
+	});
+});
+	
+
+</script>
+</head>
+
+<body>
+
+<div id="imagen_grande"><img src="" id="img_sustitucion"></div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus assumenda eum voluptates quia dolore, quidem animi sint temporibus reprehenderit commodi quis voluptatem, perferendis harum eius expedita iure explicabo optio velit. </p>
+
+<p>Donec nec pretium tellus. Cras volutpat eros a mi suscipit suscipit. Etiam sit amet sodales tellus. Nulla a odio volutpat, auctor orci at, bibendum eros. Integer suscipit velit eget venenatis varius. Suspendisse condimentum libero ut turpis placerat, eu cursus nisl pretium. Aenean condimentum iaculis felis, eu tristique neque porttitor sit amet.</p>
+<table border="0">
+  <tr>
+    <td><img src="img/dembele.jpg" width="150" height="100" id="imagen1"></td>
+    
+  </tr>
+</table>
+<p>Phasellus ligula sem, volutpat ac turpis in, mattis consectetur metus. Sed eu risus ac enim laoreet suscipit et et tortor. Quisque interdum nisi risus, a convallis elit gravida fermentum. Maecenas vehicula massa nec lectus aliquam, eu dapibus mi interdum. Aliquam magna felis, vulputate ut purus ac, feugiat condimentum velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sodales lorem sollicitudin commodo blandit. Pellentesque sollicitudin, quam ac fringilla eleifend, erat risus fringilla nulla, at vehicula ipsum sapien in diam. Aenean vel odio sollicitudin, iaculis velit at, scelerisque diam. Praesent eget sem id tellus sollicitudin dignissim.</p>
+
+<p>Integer eu euismod tortor, vitae sagittis mauris. Vivamus interdum accumsan lorem, et euismod ante facilisis sed. Phasellus pretium odio quis hendrerit varius. Etiam non arcu vitae dui cursus luctus. Vivamus a interdum ligula, nec tincidunt dui. Pellentesque sit amet enim quam. Duis consectetur purus purus, at interdum libero volutpat sit amet. Praesent commodo lacinia lacinia. Nam at euismod nunc, eu molestie ipsum. In sagittis vel enim in ultricies. Mauris semper, tellus sit amet mollis laoreet, sem diam iaculis purus, eget sodales nulla felis sed augue. Pellentesque in quam lorem. Vivamus ac nunc posuere, congue risus condimentum, lobortis sapien. Donec eu convallis est, vel convallis nisi.</p>
+
+<p>Suspendisse venenatis congue ipsum, vitae porttitor sapien egestas et. Nam efficitur nibh in mauris dapibus sagittis. Proin magna nunc, facilisis vel tincidunt a, maximus ut nisl. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas cursus mattis augue, non maximus odio. Pellentesque a nunc quis mi sagittis vestibulum. Proin diam urna, porttitor vitae eros nec, convallis tristique mi. Cras ut dolor at dolor convallis porta. Aenean gravida euismod scelerisque. </p>
+
+</body>
+</html>

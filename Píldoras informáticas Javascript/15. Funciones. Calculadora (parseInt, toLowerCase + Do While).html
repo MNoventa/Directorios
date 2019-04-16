@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculadora</title>
+
+
+<script>
+
+
+	
+
+		function suma (num1, num2){
+			alert("La suma es: " + (num1+num2));
+		}
+
+		function resta (num1, num2){
+			alert("La resta es: " + (num1-num2));
+		}
+
+		function multiplicacion (num1, num2){
+			alert("La multiplicacion es: " + (num1*num2));
+		}
+
+		function division (num1, num2){
+			alert("La division es: " + (num1/num2));
+		}
+		
+	do{
+		var operacion=prompt("Qué operación deseas realizar?").toLowerCase();
+
+		var operador1=parseInt(prompt("Dime el primer número"));
+
+		var operador2=parseInt(prompt("Dime el segundo número"));
+
+		if(operacion=="suma"){
+			suma(operador1, operador2);
+		}
+
+		else if(operacion=="resta"){
+			resta(operador1, operador2);
+		}
+
+		else if(operacion=="multiplicacion"){
+			multiplicacion(operador1, operador2);
+		}
+
+		else if(operacion=="division"){
+			division(operador1, operador2);
+		}
+
+		else{
+			alert("Lo siento, " + operacion + " no contemplada");
+		}
+
+		var repetir=prompt("Deseas repetir?");
+
+	}while(repetir=="si");
+
+</script>
+
+</head>
+
+
+
+
+
+
+<body>
+
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OBJETO WINDOW - ventanas</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	
+	$(document).ready(function(){	 //---------MISMO CODIGO CON JQUERY + HIDE + FADEIN
+
+		$("#anuncio").width(500).height(500).text("¡Vende!").hide().fadeIn(1000);
+
+	});			
+
+</script>
+<style>
+	
+	#anuncio{
+	
+	background-color: #000;
+	color: #fff;
+
+	}
+
+</style>
+
+</head>
+
+
+<body>
+
+	<div id="anuncio">
+		
+		¡COMPRA!
+
+	</div>
+
+	<script>
+		/*			//--------------MISMO CODIGO CON JAVASCRIPT
+
+		var anuncio=document.getElementById("anuncio");
+		anuncio.style.width="500px"
+		anuncio.style.height="500px"
+		anuncio.innerHTML="¡Vende!" //Substituir contenido de dentro del contenedor
+
+		*/
+	</script>
+
+</body>
+</html>
