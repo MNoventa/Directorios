@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo12</title>
+<script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+
+<script>
+	
+	var x;
+	x = $(document); 
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() { 
+		var x;
+		x = $("td"); 
+		x.mousedown(presionaBotonRaton); 
+		x.mouseup(sueltaBotonRaton);
+	}
+
+	function presionaBotonRaton() {
+		$(this).css("backgroundColor", "#ff0");
+	}
+
+	function sueltaBotonRaton() {
+		$(this).css("backgroundColor", "#fff");
+	}
+
+
+</script>
+
+</head>
+
+<body>
+	<table style="padding: 1px; border: 1px solid #000000;">
+
+		<tr>
+			<td>1111111111</td>
+			<td>1111111111</td>
+		</tr>
+
+	</table>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Imagen en movimiento</title>
+</head>
+
+<script>
+
+window.onload = function() {
+	//Se crea una variable "anim" y le decimos que será una nueva animación, pasandole las dos imagenes de los circuitos.
+  anim= new animacion('circuito_1', 'circuito_2');
+  anim.arrancar();
+}
+
+	//Se crea la función constructora llamada animacion
+animacion = function (id_circuito_1, id_circuito_2) {
+  this.circuito_1=document.getElementById(id_circuito_1);
+  this.circuito_2=document.getElementById(id_circuito_2);
+  this.posicion_circuito_1=0;
+  this.posicion_circuito_2=620;
+  this.velocidad=1;
+  this.intervalo;
+};
+
+	//Cuando se carga la pagina, se llama a la función arrancar
+animacion.prototype.arrancar = function(){
+  var that=this;
+
+  this.intervalo=setInterval(function() { 
+  	that.animar(); 
+  }, 16 );//Número de veces por segundo que se ejecuta
+}
+ 
+animacion.prototype.parar = function(){
+  clearInterval(this.intervalo);
+}
+ 
+animacion.prototype.cambiarVelocidad = function(velocidad){
+  this.velocidad=velocidad;
+}
+ 
+animacion.prototype.animar = function(){
+  this.posicion_circuito_1-=this.velocidad; 
+  this.posicion_circuito_2-=this.velocidad;
+ 
+  if(this.posicion_circuito_1<=-620) { 
+  	this.posicion_circuito_1=this.posicion_circuito_2+620; 
+  }
+
+  if(this.posicion_circuito_2<=-620) { 
+  	this.posicion_circuito_2=this.posicion_circuito_1+620; 
+  }
+ 
+  document.getElementById('circuito_1').style.left=(this.posicion_circuito_1)+'px';
+  document.getElementById('circuito_2').style.left=(this.posicion_circuito_2)+'px';
+}
+
+</script>
+
+
+<style>
+
+	section{
+		width: 35%;
+		margin: 0 auto;
+	}
+
+	#circuito{
+	  position: relative; 
+	  float: left;
+	  height: 349px; 
+	  width:620px;
+	  overflow:hidden;
+	}
+	 
+	#circuito_1, #circuito_2{
+	  position: absolute;
+	  top: 0px; 
+	  left: 0px;
+	  width: 620px; 
+	  height: 349px;
+	}
+	 
+	#circuito_2{
+	  transform: scaleX(-1);
+	}
+	 
+	#coche {
+	  position: absolute;
+	  top: 220px;
+	  left: 50px;
+	  width: 120px;
+	}
+	 
+	#controles{
+	  position:relative; 
+	  background: #0021;
+	  float: right;
+	  text-align: center;
+	  margin-top: 20px;
+	  width:100%;
+
+}
+
+</style>
+
+<body>
+   <h1>Movimiento coche en circuito</h1>
+
+   	<section>
+
+   		<!--Contenedor con circuitos y coche-->
+	    <div id="circuito">
+
+	    		<img id="circuito_1" src="circuito.jpg" >
+	     		<img id="circuito_2" src="circuito.jpg" >
+
+	      <img id="coche" src="coche.png" >
+	    </div>
+    </section>
+
+    <div id="controles">
+
+    	<!--Eventos para cada boton-->
+      <input type="button" name="Parar" value="Stop" onclick="anim.parar()" />
+      <input type="button" name="Arrancar" value="Play" onclick="anim.arrancar()" />
+
+      <!--Eventos onchange-->
+      <b>Elige la velocidad</b>
+      <select name="vel" onchange="anim.cambiarVelocidad(this.value);">
+      	<option value="none" >Escoge la velocidad</option>
+        <option value="0.2" >Muy lento</option>
+        <option value="0.5" >Lento</option>
+        <option value="1" >Normal</option>
+        <option value="2" >Rápido</option>
+        <option value="4" >Muy Rápido</option>
+      </select>
+    </div>
+
+  </body>
+</body>
+</html>

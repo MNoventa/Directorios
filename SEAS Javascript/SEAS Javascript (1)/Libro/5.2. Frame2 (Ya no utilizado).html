@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Página sin título</title>
+<script> 
+
+	function infdocu(){
+		document.write("Nombre de esta ventana: "+top.name +"<br>"); //Nombre de la ventana desde donde está creado este frame
+		document.write("Nombre del padre: "+parent.name+"<br>"); 
+		document.write("Mi nombre es: "+self.name+"<br>"); //self.name indica el nombre del propio frame
+		document.write("Nombre del frame de arriba: "+ top.frames[0].name +"<br>");
+		document.write("URL de mi padre: "+ parent.location+"<br>"); 
+		document.write("Mi URL es: "+self.location+"<br>"); //self.name indica el nombre del propio frame
+	}
+
+</script>
+</head>
+<body>
+<script> 
+
+	infdocu();
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Documento sin título</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--https://www.youtube.com/watch?v=bBJhs6On7Gk&index=43&list=PLU8oAlHdN5BmpobVmj1IlneKlVLJ84TID-->
+    <style>
+    body {
+        background-color: #B6B6B6;
+    }
+
+    body h1 {
+        color: #9B3737;
+    }
+
+    #galeriaImg {
+        height: 500px;
+        background-color: #fff;
+        margin-bottom: 25px;
+        border: 3px solid #000;
+        width: 800px;
+    }
+
+    #galeriaImg img {
+        width: 750px;
+        margin: 20px;
+    }
+    </style>
+    <script>
+    var galeria = "";
+
+
+    window.onload = function() {
+
+        inicio();
+    }
+
+    function inicio() {
+        galeria = document.querySelectorAll("img");
+        ocultar();
+        galeria[0].style.display = "block";
+    }
+
+
+    function ocultar() {
+        galeria.forEach(function(enCadaImagen) {
+            enCadaImagen.style.display = "none";
+        });
+    }
+    //lo he metido dentro de una funcion y ya no salta el error, 
+    function cambio() {
+        var listaImg = document.getElementById("selectImg");
+        var indice = listaImg.selectedIndex;
+
+        if (listaImg.options[indice].value == "img1") {
+            ocultar();
+            galeria[0].style.display = "block";
+        } else if (listaImg.options[indice].value == "img2") {
+            ocultar();
+            galeria[1].style.display = "block";
+        } else if (listaImg.options[indice].value == "img3") {
+            ocultar();
+            galeria[2].style.display = "block";
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <form id="div1">
+        <!--Especificamos que es un formulario-->
+        <div id="galeriaImg">
+            <img src="img/messi.jpeg" alt="">
+            <img src="img/umtiti.jpg" alt="">
+            <img src="img/iniesta.jpg" alt="">
+        </div>
+        <select size="1" id="selectImg" onchange="cambio()">
+            <option value="img1">Messi</option>
+            <option value="img2">Umtiti</option>
+            <option value="img3">Iniesta</option>
+        </select>
+    </form>
+</body>
+
+</html>

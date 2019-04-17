@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--https://www.youtube.com/watch?v=bBJhs6On7Gk&index=43&list=PLU8oAlHdN5BmpobVmj1IlneKlVLJ84TID-->
+<style>
+
+
+</style>
+
+<script> 
+
+function Verseleccion(form){
+	var ventana; 
+	ventana=window.open("","",'width=340,height=150');
+	ventana.document.write("<B>HAS ELEGIDO EL SIGUIENTE MENÚ:</B><BR>");
+	ventana.document.write("<B>Primer plato:</B>");
+	
+	//obtener selección primer plato
+	var primero_selleccionado = form.PRIMERPLATO.selectedIndex; 
+
+	if(form.PRIMERPLATO.options[primero_selleccionado].value==""){ 
+
+		alert("NO HAS ELEGIDO PRIMER PLATO");
+		//si no elegimos nada
+	}
+
+	//visualizamos el valor de la opción elegida
+	ventana.document.write(form.PRIMERPLATO.options[primero_selleccionado].value +"<BR>");
+	
+ 
+	ventana.document.write("<B>Segundo plato:</B>"); 
+	
+	var segundo = form.SEGUNDOPLATO.selectedIndex;
+	
+	//obtener selección 2º plato
+	ventana.document.write(form.SEGUNDOPLATO.options[segundo].text+"<BR>");
+	ventana.document.write("<B>Postre:</B>"); 
+
+	for (i=0; i<form.POSTRE.length; i++){
+
+		if(form.POSTRE[i].checked){
+		ventana.document.write(form.POSTRE[i].value+"<BR>"); ventana.document.close();
+		//cerramos la escritura en el documento
+	}
+}
+
+}
+
+</script>
+
+
+
+</head>
+
+<body>
+	
+	<form action="get">
+<p>
+
+	<b>Elige el 1º plato:</b>
+	<select size="1" name="PRIMERPLATO">
+		<option value=" selected="selected">selecciona primer plato</option>
+		<option value="migas con chorizo">migas con chorizo</option>
+		<option value="borrajas">borrajas</option>
+		<option value="col de bruselas">coles de bruselas</option>
+		<option value="patatas asadas">patatas asadas</option>
+	</select>
+
+</p>
+
+<p>
+ 
+	&nbsp;<b>Elige el 2º plato:</b>
+	<select size="3" name="SEGUNDOPLATO" multiple="multiple">
+		<option>entrecot a la plancha</option>
+		<option>cochinillo a la plancha</option>
+		<option>huevos fritos con longaniza</option>
+		<option selected="selected">patatas asadas</option>
+	</select>
+
+</p>
+
+<p>
+
+	<b>Postre:</b>
+	<input type="radio" name="POSTRE" value="FRUTA"checked="checked" />fruta
+	<input type="radio" name="POSTRE" value="YOGUR"/>yogur
+	<input type="radio" name="POSTRE" value="HELADO"/>helado
+	<input type="radio" name="POSTRE" value="OTRO"/>otro
+
+</p>
+
+<input type="button" name="VER" value="Ver menu" onclick="Verseleccion(this.form)"/>
+
+</form>
+
+
+</body>
+</html>

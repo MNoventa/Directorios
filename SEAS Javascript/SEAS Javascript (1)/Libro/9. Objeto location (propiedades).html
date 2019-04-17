@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OBJETO LOCATION - Ejemplo1</title>
+
+
+<script> 
+
+function localizar(){
+	document.write("HREF: " + location.href +"<br>"); 
+	document.write("HOST: " + location.host +"<br>"); //no aparece
+	document.write("HOSTNAME: " + location.hostname +"<br>"); //no aparece
+	document.write("PATHNAME: " + location.pathname +"<br>"); 
+	document.write("PORT: " + location.port +"<br>"); //no aparece
+	document.write("PROTOCOL: " + location.protocol +"<br>"); //aparece file
+}
+
+</script>
+
+</head>
+
+<body>
+	<center>
+	<p><b>ESTA PÁGINA ES UN EJEMPLO DEL OBJETO LOCATION</b></p>
+	<p>LOS EJEMPLOS SE VISUALIZARAN EN ESTA VENTANA</p>
+
+	<script> 
+		localizar();
+	</script>
+
+	</center>
+</body>
+
+</html>

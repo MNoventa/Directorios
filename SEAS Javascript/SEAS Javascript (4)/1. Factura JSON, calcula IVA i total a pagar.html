@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+<script src="https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js"></script>
+</head>
+<style>
+		
+	#divIVA{
+		background-color: #D3D0D0;
+		width: 500px;
+		height: 400px;
+		text-align: center;
+		padding-top: 50px;
+	}
+
+
+</style>
+<body>
+	<div id="divIVA">
+		<p><b>Calculador de IVA</b></p>
+		
+		<p>Precio</p>
+		<input type="text" id="precioSinIva">
+		<br>
+		<p>Tipo de pago</p>
+		<input type="text" id="tipoPago">
+		<br><br>
+		<input type="button" id="resultado" value="Ver resultado">
+	</div>
+
+</body>
+
+<script>	
+
+	
+	//La siguiente función se llama función constructora
+	function Factura(tipoIVA, formaPago, precio){
+
+		this.precio = precio;
+		this.tipoIVA = tipoIVA;
+		this.formaPago = formaPago;
+		this.nombre = "MarioCompany";
+		this.direccion = "Puigmal";
+		this.telefono = "6749998384";
+	}
+
+	
+	//Se define el método para calcular el total, aplicando el IVA
+	Factura.prototype.precioTotal = function(){
+
+		var calculo = (this.precio * this.tipoIVA) + parseInt(this.precio);
+		alert(calculo)
+	}
+
+	$("#resultado").click(function(){
+		var precioSINIVA = document.getElementById("precioSinIva").value;
+		var tipoPago = document.getElementById("tipoPago").value;
+
+		//Se define al cliente
+		var cliente1 = new Factura (0.21, tipoPago, precioSINIVA);
+
+		//Se muestra resultado
+		cliente1.precioTotal();
+		alert(cliente1.formaPago);
+
+	});
+
+
+
+</script>
+</html>

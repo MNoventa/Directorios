@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>OBJETO TEXT, TEXTAREA y PASSWORD - Ejemplo1</title>
+<script>
+	function validarFormulario(formulario) { 
+
+		if (formulario.clave1.value == "") {
+			
+			//no se ha introducido contraseña 
+			alert("Debes introducir la contraseña");
+			formulario.clave1.focus(); //devolver el foco al campo 
+			return;
+		
+		}
+
+		else if (formulario.clave1.value != formulario.clave2.value){
+
+			//las contraseñas escritas no coinciden 
+			alert("Las contraseñas introducidas son distintas") 
+			formulario.clave1.focus(); //devolver el foco 
+			formulario.clave1.select(); //seleccionar texto
+		
+		}
+
+		else{
+
+			return;
+			formulario.action="http://www.servidor.es/login_servidor.seas" 
+			formulario.submit(); //enviar datos al servidor
+		}
+	}
+</script>
+</head>
+
+
+<body>
+<p align="center">
+<b>VERIFICACIÓN DE LA CONTRASEÑA</b>
+<center>
+<table bgcolor="#FFFFCC" border="2">
+<td>
+<form onsubmit=javascript:validarFormulario(this) method="post">
+Escribe tu nombre:
+<input size="30" name="NOMBRE"/>
+<p>
+Contraseña:
+<input name="clave1" type="password" size="20"/>
+<p>
+Introduce de nuevo la contraseña:
+<input name="clave2" type="password" size="20"/>
+<p>
+<center>
+<input type="submit" value="Enviar" name="Enviar"/> nbsp;
+<input type="reset" value="Restablecer"/>
+</center>
+</form>
+</td>

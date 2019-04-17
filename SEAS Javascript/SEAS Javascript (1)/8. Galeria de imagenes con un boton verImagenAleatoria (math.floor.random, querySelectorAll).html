@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Page Title</title>
+        <style>
+
+            body{
+                background-color: #B6B6B6;
+            }
+
+            body h1{
+                color: #9B3737;
+            }
+
+            #galeriaImg{
+                height: 500px;
+                background-color: #fff;
+                margin-bottom: 25px;
+                border: 3px solid #000;
+                width:750px;
+                padding:40px;
+            }
+        </style>
+        <script>
+
+            $(document).ready(function(){
+               
+                    galeria = document.querySelectorAll("img")
+                    galeria[0].style.display = "block";
+                    galeria[1].style.display = "none";
+                    galeria[2].style.display = "none";
+
+                $("#verImagen").click(function(){ //Cuando se haga click en el boton se va a substituir su propio texto con la propiedad "val"
+
+                    var aleatorio=Math.floor(Math.random()*3);
+
+                    if(aleatorio==0){
+                        galeria[0].style.display = "block";
+                    }
+
+                    else{
+                        galeria[0].style.display = "none";
+                    }
+
+                    if(aleatorio==1){
+                        galeria[1].style.display = "block";
+                    }
+
+                    else{
+                        galeria[1].style.display = "none";
+                    }
+
+                    if(aleatorio==2){
+                        galeria[2].style.display = "block";
+                    }
+
+                    else{
+                        galeria[2].style.display = "none";
+                    }
+
+
+                });
+
+
+
+            });
+                
+                
+
+                /*function inicio() {
+                galeria = document.querySelectorAll("img")
+                ocultar();
+                galeria[0].style.display = "block";
+
+                }
+
+                function ocultar(){
+                    $(galeria).each(function(element){
+                    element.style.display="none";
+                    });
+                }
+
+                function imagenRandom(){
+                    var aleatorio=Math.round(Math.random()*4);
+                   
+
+                    if($(galeria[0])==$(galeria[aleatorio])){
+                        $(galeria[aleatorio]).style.display = "block"
+
+                    }else{
+                        $(galeria[aleatorio]).style.display = "none"
+                    }
+                   if($(galeria[1])==$(galeria[aleatorio])){
+                        $(galeria[aleatorio]).style.display = "block"
+
+                    }else{
+                        $(galeria[aleatorio]).style.display = "none"
+                    }
+                    if($(galeria[2])==$(galeria[aleatorio])){
+                        $(galeria[aleatorio]).style.display = "block"
+
+                    }else{
+                        $(galeria[aleatorio]).style.display = "none"
+                    }    
+               } */
+            
+        </script>
+    </head>
+    <body>
+        <center>
+            <div>
+                <h1>Galeria de imágenes</h1>
+            </div>
+
+            <div id="galeriaImg">
+           
+                <img src="img/dembele.jpg" width="700px" height="450px" alt="">
+                <img src="img/iniesta.jpg" width="700px" height="450px" alt="">
+                <img src="img/messi.jpeg" width="700px" height="450px" alt="">
+            </div>
+
+            <input type="button" id="verImagen" value="Ver aleatorio" >
+        </center>
+    </body>
+</html>

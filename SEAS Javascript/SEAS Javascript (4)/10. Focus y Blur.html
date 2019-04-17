@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo14</title>
+<script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+<style>
+
+	#text1,#text2 { 
+		color:#00f;
+	}
+
+</style>
+
+<script>
+	
+	var x;
+	x = $(document); 
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() { 
+		var x = $("#text1"); 
+		x.focus(tomaFoco);
+		x.blur(pierdeFoco);
+		x = $("#text2"); 
+		x.focus(tomaFoco); 
+		x.blur(pierdeFoco);
+	}
+	 
+
+	function tomaFoco() { 
+		var x = $(this);
+		x.css("color", "#f00");
+	}
+	function pierdeFoco() { 
+		var x = $(this);
+		x.css("color", "#00f");
+	}
+
+</script>
+
+</head>
+
+<body>
+	<form action="#" method="post">
+		<input type="text" name="text1" id="text1" value="Hola" size="20">
+		<br>
+		<input type="text" name="text2" id="text2" value="Hola" size="20">
+	</form>
+</body>
+
+</html>

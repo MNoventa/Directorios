@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title></title>
+ <script type="text/javascript">
+ // Funcion que añade elementos al final del array
+ Array.prototype.anadir = function (elemento) {
+ this[this.length] = elemento;
+ }
+ var array1 = [0, 1, 2];
+ array1.anadir(2);
+ alert(array1);
+ // La Funcion contiene comprueba si esta el elemento en el array
+ Array.prototype.contiene = function (elemento) {
+ for (var i = 0; i < this.length; i++) {
+ // Es importante utilizar el operador === para comprobar
+ // que los elementos sean exactamente iguales
+ if (this[i] === elemento) {
+ return true;
+ }
+ }
+ return false;
+ }
+ // Funcion que añade elementos al final del array y
+ // permite evitar añadir elementos duplicados
+ Array.prototype.anadir = function (elemento, permitirDuplicados) {
+ var permitir = (permitirDuplicados == null) ? true :
+permitirDuplicados;
+ if (!permitir) {
+ if (!(this.contiene(elemento))) {
+ this[this.length] = elemento;
+ }
+ }
+ else {
+ this[this.length] = elemento;
+ }
+ }
+ var array2 = [0, 1, 2];
+ array2.anadir(2);
+ alert(array2);
+ var array3 = [0, 1, 2];
+ array3.anadir(2, false);
+ alert(array3);
+ </script>
+</head>
+Solución Ejercicio Voluntario Página 2 de 2
+<body>
+</body>
+</html>

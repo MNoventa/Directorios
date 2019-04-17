@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+<style>
+
+	#infos{
+		
+		float: right;
+		width: 300px;
+
+	}
+
+	#info1, #info2, #info3{
+		float: right;
+		width: 300px;
+		background-color: #f32;
+		text-align: center;
+		display: none;
+		position: static;
+		margin: 10px;
+	}
+
+	.borde{
+		border: 3px solid #DF2E2B;
+	}
+
+
+</style>
+
+<script>
+
+	$(document).ready(function(){
+
+		
+		var mes=["Enero","Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+		$("#validar").click(function(){
+
+			//Validar dia
+			var contenido=document.getElementById("tipoTexto").value;
+			var erroneo1=false;
+
+			if(contenido>31 || contenido<1){
+				$("#info1").fadeIn();
+				$("#tipoTexto").addClass("borde")
+				erroneo1=false;
+			
+			}else{
+				$("#info1").fadeOut();
+				$("#tipoTexto").removeClass("borde")
+				erroneo1=true;
+			}
+
+			//Validar mes
+			var contenido2=document.getElementById("tipoTexto2").value;
+			var erroneo2=false;
+
+			for(var i=0; i<mes.length; i++){
+				if(mes[i]!=contenido2){
+					erroneo2=true;
+				
+				}else{
+					erroneo2=false
+					break;
+				}
+			}
+
+			if(erroneo2==true){
+				$("#info2").fadeIn();
+				$("#tipoTexto2").addClass("borde")
+			
+			}else{
+				$("#info2").fadeOut();
+				$("#tipoTexto2").removeClass("borde")
+			}
+
+			//Validar año
+			var contenido3=document.getElementById("tipoTexto3").value;
+			var erroneo3=false;
+
+			if(contenido3>2017 || contenido3<1900){
+				$("#info3").fadeIn();
+				$("#tipoTexto3").addClass("borde")
+				erroneo3=false
+			
+			}else{
+				$("#info3").fadeOut();
+				$("#tipoTexto3").removeClass("borde")
+				erroneo3=true;
+			}
+
+			if(erroneo1==true && erroneo2==false && erroneo3==true){
+				alert("hola")
+			}
+
+		});
+	});
+	
+	
+</script>
+
+	</head>
+
+	<body>
+			<div id="infos">
+				
+				<div id="info1">
+					<p><b>
+						¡No has introducido el dia correcto!
+					</b></p>
+				</div>
+
+
+				<div id="info2">
+					<p><b>
+						¡No has introducido el mes correcto!
+					</b></p>
+				</div>
+
+
+				<div id="info3">
+					<p><b>
+						¡No has introducido el año correcto!
+					</b></p>
+				</div>
+
+			</div>
+			
+
+		<p>Dia</p>
+		<input type="textArea" id="tipoTexto">
+
+		<p>Mes</p>
+		<input type="textArea" id="tipoTexto2">
+
+		<p>Año</p>
+		<input type="textArea" id="tipoTexto3">
+		
+		<br><br>
+		<input type="button" id="validar" value="Validar">
+		
+		<br><br><br>
+		
+		<p>Fecha introducida</p>
+		
+		
+	</body>
+</html>

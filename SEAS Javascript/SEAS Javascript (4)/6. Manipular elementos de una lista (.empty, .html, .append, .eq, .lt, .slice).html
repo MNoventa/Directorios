@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo18</title>
+<script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+
+<script>
+
+	var x;
+	
+	x = $(document); 
+
+	x.ready(inicializarEventos);
+
+
+	function inicializarEventos() { 
+		var x;
+		x = $("#boton1"); 
+		x.click(eliminarElementos) 
+
+		x = $("#boton2"); 
+		x.click(restaurarLista)
+
+		x = $("#boton3"); 
+		x.click(anadirElementoFinal) 
+
+		x = $("#boton4");
+		x.click(anadirElementoPrincipio)
+
+		x = $("#boton5"); 	
+		x.click(eliminarElementoFinal)
+
+		x = $("#boton6"); 
+		x.click(eliminarElementoPrincipio) 
+
+		x = $("#boton7"); 
+		x.click(eliminarPrimeroSegundo)
+
+		x = $("#boton8"); 
+		x.click(eliminarDosUltimos)
+	}
+
+	function eliminarElementos() {
+		var x;
+		x = $("ul");
+
+		// EMPTY: Elimina permanentemente uno o varios elementos
+
+		x.empty(); 
+	}
+
+	function restaurarLista() {
+
+		// HTML: Substituye todos los elementos que tenga el objeto seleccionado, por lo que se desee
+
+		$("ul").html('<li>Primer item.</li><li>Segundo item.</li><li>Tercer item.</li><li>Cuarto item.</li>');
+	}
+
+
+	function anadirElementoFinal() { 
+		var x;
+		x = $("ul");
+
+		// APPEND: Añadir un elemento pero al final
+
+		x.append("<li>otro item al final</li>");
+	}
+	 
+	function anadirElementoPrincipio() { 
+		var x;
+		x = $("ul");
+		x.prepend("<li>otro item al principio</li>");
+	}
+
+	function eliminarElementoFinal() { 
+		
+		var x = $("li");
+		var cantidad = x.length; //Se asigna la cantidad de elementos <li> en una variable
+
+		/* EQ: Selecciona un elemento con un número de índice determinado. En el caso siguiente sería: 
+			
+			grupo de <li> . [en la posición de...] (cantidad -1)
+		*/
+		x = x.eq(cantidad - 1); 
+		x.remove(); 
+	}
+
+	function eliminarElementoPrincipio() { 
+		var x;
+		x = $("li").eq(0);
+		//x = $("li").slice(0, 1); También se puede hacer con .slice
+		x.remove();
+	}
+
+	function eliminarPrimeroSegundo() { 
+		var x;
+		// :LT: Significa less than (menos que). Si le aplica less than 2, sería la posición 0 y 1.
+		x = $("ul li:lt(2)"); 
+		/*
+
+		Es lo mismo que esto: 
+		
+		x = $("ul li").slice(0, 2); 
+
+		SLICE: Te recoge el numero de parametros escogidos entre dos números, sin tener en cuenta el segundo
+
+		*/
+		x.remove();
+	}
+
+	function eliminarDosUltimos() { 
+		var x;
+		x = $("ul li").slice(-2); 
+		x.remove();
+	}
+
+
+</script>
+
+</head>
+
+<body>
+	<h1>Métodos para manipular elementos del DOM con jQuery.</h1>
+	
+	<ul>
+		<li>Primer elemento.</li>
+		<li>Segundo elemento.</li>
+		<li>Tercer elemento.</li>
+		<li>Cuarto elemento.</li>
+	</ul>
+
+	<center>
+		<input type="button" id="boton1" value="Eliminar la lista completa."><br><br>
+		<input type="button" id="boton2" value="Restaurar Lista"><br><br>
+		<input type="button" id="boton3" value="Añadir un elemento al final de la lista"><br><br>
+		<input type="button" id="boton4" value="Añadir un elemento al principio de la lista"><br><br>
+		<input type="button" id="boton5" value="Eliminar el último elemento."><br><br>
+		<input type="button" id="boton6" value="Eliminar el primer elemento."><br><br>
+		<input type="button" id="boton7" value="Eliminar el primero y segundo elemento."><br><br>
+		<input type="button" id="boton8" value="Eliminar los dos últimos."><br>
+	</center>
+</body>
+</html>

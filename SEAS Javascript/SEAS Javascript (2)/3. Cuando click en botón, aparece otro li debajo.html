@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+    <meta charset="utf-8" />
+    <title>EV3_UD2</title>
+    <script>
+        $(document).ready(function(){
+
+            var contador=6;
+
+            $("#boton").click(function() {
+                
+                $("#lista").append("<li> elemento de la lista" + contador + "</li>")
+                contador++;
+            });
+        });
+
+    </script>
+</head>
+<body>
+    
+    <ul id="lista">
+        <li>elemento de la lista1</li>
+        <li>elemento de la lista2</li>
+        <li>elemento de la lista3</li>
+        <li>elemento de la lista4</li>
+        <li>elemento de la lista5</li>
+    </ul>
+    
+    <input type="button" value="Añadir elemento" id="boton">  
+</body>
+</html>

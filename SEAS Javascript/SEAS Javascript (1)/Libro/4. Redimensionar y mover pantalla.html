@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>OBJETO WINDOW - redimensionar</title>
+<script>
+
+var x=0;
+var y=0;
+function MoverVentana() {
+x=document.FORMULARIO[0].value; 
+y=document.FORMULARIO[0].value; 
+window.moveTo(x,y);
+}
+function Redimensionar() {
+x=document.FORMULARIO[0].value; 
+y=document.FORMULARIO[0].value; 
+window.resizeTo(x,y) ;
+
+}
+
+</script>
+</head>
+<body>
+<p align="center"><b> INTRODUCE las coordenadas x e y para mover o redimensionar la ventana:</b></p>
+<center>
+<table border="0" cellpadding="10" cellspacing="00" >
+<tr>
+<td bgcolor="#FFFF96">
+<form name="FORMULARIO">
+<p><b>Coordenada X:</b><input type="text" name="X" size="10"/></p>
+<p><b>Coordenada Y:</b><input type="text" name="Y" size="10"/></p>
+<input type="button" value="mover ventana" name="B1" onclick="MoverVentana()"/>
+<input type="button" value="Redimensionar" name="B2" onclick="Redimensionar()"/>
+</form>
+</td>
+</tr>
+</table>
+</center>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OBJETO WINDOW - Ventana Hija </title>
+<script> 
+
+	function ColocarUrl(direccion) {				//Desconozco para qué sirve la función
+		opener.document.location = direccion;
+	}
+
+</script>
+</head>
+
+<body>
+	<center>
+		<p><b>HAZ CLIC EN UN EJEMPLO</b></p>
+		<a href="javascript:ColocarUrl('http://seas.es')">Seas</a></br>
+		<a href="javascript:ColocarUrl('http://estudiosabiertos.es')">Estudios Abiertos</a></br>
+		<a href="javascript:ColocarUrl('http://google.es')">Google
+		</a></br>
+	</center>
+</body>
+
+</html>

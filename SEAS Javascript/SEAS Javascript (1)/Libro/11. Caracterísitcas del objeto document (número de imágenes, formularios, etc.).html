@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>OBJETO DOCUMENT - Ejemplo1</title>
+<script> var ventana;
+	function CrearVentana()	{
+	var opciones="left=100,top=100,";
+	opciones=opciones + "width=" + document.FORMULARIO[0].
+	value +",";
+
+	value ;
+
+	opciones=opciones + "height=" + document.FORMULARIO[1].
+	ventana = window.open(",",opciones); //crea la ventana ventana.document.write("ESTA ES LA VENTANA QUE SE HA CREADO");
+	}
+	function CerrarVentana()	{ if(ventana && !ventana.closed)
+	ventana.close(); //cierra la ventana creada window.close();//cierra la ventana actual
+	}
+</script>
+</head>
+
+
+
+
+
+<body>
+	<a href="#caracteristicas">Carácteristicas</a>
+	<p align="center">
+	<b>INTRODUCE EL ANCHO Y ALTO DE LA VENTANA:</b></p>
+	<p align="center">
+	<img border="0" src="seas.jpg" width="81" height="77"></p>
+	<center>
+	<table border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	<td bgcolor="#FFFF66">
+	<form name="FORMULARIO">
+	<p>
+	<b>ANCHO VENTANA:</b><input type="text" name="ANCHO" size="10"></p>
+	<p>
+	<b>ALTO VENTANA:</b>
+	<input type="text" name="ALTO" size="10"></p>
+	<input type="button" value="Crear Ventana" name="B1" onclick="CrearVentana()">
+	<input type="button" value="Cerrar Ventana" name="B2" onclick="CerrarVentana()">
+	</form>
+	</td>
+	</tr>
+	</table>
+	</center>
+	<p align="center">
+	<b><a href="http://www.seas.es">Enlace externo</a></b></p>
+	<hr>
+	<center>
+	<b>CARACTERISTICAS DEL DOCUMENTO</b><br/>
+	<a name="caracteristicas">caracteristicas</a>
+	
+	<script> 
+		document.write("Número de imágenes: "+ document.images.length+" <br>");
+		document.write("Número de enlaces externos: "+ document.links.length +" <br>");
+		document.write("Número de enlaces internos: "+ document.anchors.length+" <br>");
+		document.write("Nombre enlaces internos: "+ document.anchors[0].name +" <br>");
+		document.write("Número de formularios: "+ document.forms.length+" <br>");
+		document.write("Color de fondo: "+ document.bgColor+" <br>"); 
+		document.write("Color de los enlaces: "+ document.linkColor+"<br>");
+		document.write("Color de los enlaces activos: "+ document. alinkColor+" <br>");
+		document.write("Fecha última modificación: "+ document.lastModified+" <br>");
+	</script>
+
+	<script> 
+	var i;
+	document.write("Número de enlaces externos: "+ document.links.length+" <br>"); 
+	document.write("Número de enlaces internos: "+ document.anchors.length+" <br><hr>");
+	
+	for(i=0; i<document.links.length; i++){
+
+	document.write("Direccion href: "+ document.links[i].href+ "<br>"); 
+	document.write("Nombre de enlace hash: "+document.links[i].hash + "<br>");
+	document.write("Servidor hostname: "+ document.links[i].hostname + "<br>");
+	document.write("Protocol: "+ document.links[i].protocol + "<br>"); document.write("Pathname: "+ document.links[i].pathname + "<br><hr>");
+}
+</script>
+	</center>
+</body>
+
+</html>

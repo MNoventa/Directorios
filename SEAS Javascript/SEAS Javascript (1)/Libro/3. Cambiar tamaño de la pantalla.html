@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OBJETO WINDOW - ventanas</title>
+
+<script> 
+
+
+	var ventana;
+
+	function CrearVentana(){
+		var opciones="left=100,top=100,";
+		opciones=opciones +"width="+document.FORMULARIO[0].value+","; 
+		opciones=opciones +"height="+document.FORMULARIO[1].value; 
+		ventana = window.open(",",opciones); 
+		ventana.document.write("Ventana nueva con el tamaño ");
+	}
+
+	function CerrarVentana(){
+
+		if(ventana && !ventana.closed){
+
+		ventana.close();
+
+		window.close();
+		}
+	}
+
+</script>
+</head>
+
+
+<body>
+
+	<p align="center"><b> INTRODUCE EL ANCHO Y EL ALTO DE LA VENTANA:</b></p>
+	
+	<center>
+	
+	<table border="0" cellpadding="0" cellspacing="0">
+	
+		<tr>
+		
+			<td bgcolor="#FFFF96">
+				<form name="FORMULARIO">
+					<p><b>ancho de la ventana:</b><input type="text" name="ancho" size="10"/></p>
+					<p><b>alto de la ventana:</b><input type="text" name="alto" size="10"/></p>
+					<input type="button" value="Crear Ventana" name="B1" onclick="CrearVentana()">
+					<input type="button" value="Cerrar Ventana" name="B2" onclick="CerrarVentana()">
+				</form>
+			</td>
+		</tr>
+
+	</table>
+
+	</center>
+
+</body>
+</html>

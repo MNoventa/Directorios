@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<script> 
+	function devolverLienzo(x) {
+		//Recibimos el elemento canvas
+		var canvas = document.getElementById(x);
+		//Comprobación sobre si encontramos un elemento
+		//y podemos extraer su contexto con getContext(),
+		//que indica compatibilidad con canvas 
+		if (canvas && canvas.getContext) {
+		//Accedo al contexto de ‘2d’ de este canvas, necesario para dibujar
+			var lienzo = canvas.getContext("2d");
+		//devolvemos el lienzo para después realizar el dibujo 
+		return lienzo; 
+		}else{
+			return false;
+		}
+	}
+	 
+	window.onload = function dibujar() {
+		var lienzo = devolverLienzo("lienzo1"); 
+
+		if (lienzo) {
+			lienzo.strokeStyle = "#000";
+			//Inicio de camino 
+			lienzo.beginPath();
+			lienzo.moveTo(0, 0);
+			lienzo.lineTo(150, 300);
+			lienzo.lineTo(300, 0);
+			//Trazar linea 
+			lienzo.stroke();
+		}
+	}
+</script>
+
+
+</head>
+<body>
+	<canvas id="lienzo1" width="350" height="350">
+		Su navegador no soporta el elemento html5 canvas
+	</canvas>
+</body>
+</html>

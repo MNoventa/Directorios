@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+<script> 
+
+	var a = a;
+
+	try {
+	
+		if (typeof a == "undefined" || isNaN(a)) {
+			throw new Error('La variable "a" no es un número');
+		}
+		
+		var resultado = 5 / a;
+		
+	} 
+
+	catch (excepcion) { 
+
+		alert(excepcion);
+		
+	} 
+
+	finally {
+
+		alert("Se ejecuta");
+	}
+</script>
+
+
+
+</head>
+
+<body>
+ 	
+</body>
+
+</html>

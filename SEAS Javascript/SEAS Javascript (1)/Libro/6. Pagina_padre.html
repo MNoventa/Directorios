@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OBJETO WINDOW - Ventana Padre </title>
+<script>
+
+	function Pagina() {         //SOLO SIRVE EN FIREFOX
+
+		if (confirm("¿Quiere abrir una página?")) {
+			
+			ventanahija = window.open("6.1.Pagina_hija.html", "VentanaHija", "width=175,height=175");
+
+		}
+}
+
+</script>
+</head>
+<body>
+
+	<center>
+
+		<p><strong>ESTA PÁGINA CREA UNA VENTANA CON UN INDICE A	DIVERSOS EJEMPLOS</strong></p>
+		<p>LOS EJEMPLOS SE CARGARÁN EN ESTA VENTANA</p>
+
+		<form>
+			<p><input type="button" value="Página nueva" name="imprimir" onclick="Pagina()"/></p>
+		</form>
+
+	</center>
+
+</body>
+</html>

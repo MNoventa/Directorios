@@ -1,0 +1,139 @@
+<html>
+<meta charset="UTF-8">
+<title>Ejercicio SEAS 5</title>
+<link rel="stylesheet" href="micss2.css">
+<style>
+	
+	table, td, tr{
+	
+		border:1px solid #000;
+
+
+	}
+
+</style>
+
+
+</head>
+
+<body>
+
+<table id="tabla">
+	
+	<tr>
+		<td>
+			<strong>A continuación, los colores con los que vas a poder modificar el color de la letra, y de la tabla:</strong>
+		</td>
+
+	</tr>
+
+	<tr>
+		<td>
+
+			<center>
+				
+			<p><strong>Colores disponibles</strong></p>
+			<p>Rosa</p>
+			<p>Azul</p>
+			<p>Amarillo</p>
+			<p>Verde</p>
+
+			</center>
+
+		</td>
+		
+	</tr>
+
+	<tr>
+		
+		<td>
+			
+			Aquí se colocará el texto:
+
+			<input type="text" id="inputtext" value="" id="display" size="50">
+			
+		</td>
+		
+	</tr>
+
+	<tr>
+		
+			
+		<td>
+			<center>
+			<input type="button" value="Empezar ahora" onclick="aparecealert()">
+			</center>
+		</td>
+
+		
+		
+
+	</tr>
+
+</table>
+
+
+<script>
+	
+
+	var colortabla="";
+	var colorletra="";
+	var textointroducido="";
+	var tabla=document.getElementById("tabla");
+	var texto=document.getElementById("inputtext");
+
+
+	function aparecealert(){
+
+
+		colortabla=prompt("Dime de qué color quieres que sea el texto").toLowerCase();
+
+		while(colortabla!="rosa" && colortabla!="amarillo" && colortabla!="azul" && colortabla!="verde"){
+		colortabla=prompt("No se por qué pones " + colortabla + " pareces tonto").toLowerCase();
+		}
+		
+
+		if (colortabla=="rosa"){
+			 tabla.style.backgroundColor="hotpink";
+			}
+			else if (colortabla=="azul"){
+			 tabla.style.backgroundColor="lightblue";
+			}
+			else if (colortabla=="amarillo"){
+			 tabla.style.backgroundColor="lightyellow";
+			}
+			else if (colortabla=="verde"){
+			 tabla.style.backgroundColor="lightgreen";
+			}
+
+				
+		colorletra=prompt("Dime de qué color quieres que sea el texto");
+
+		while(colorletra!="rosa" && colorletra!="amarillo" && colorletra!="azul" && colorletra!="verde"){
+		colorletra=prompt("A ver mama, ya te he dicho que " + colorletra + " no puede ser").toLowerCase();
+		}
+		
+
+		if (colorletra=="rosa"){
+			 texto.style.color="hotpink";
+			}
+			else if (colorletra=="azul"){
+			 texto.style.color="lightblue";
+			}
+			else if (colorletra=="amarillo"){
+			 texto.style.color="lightyellow";
+			}
+			else if (colorletra=="verde"){
+			 texto.style.color="lightgreen";
+			}
+
+		textointroducido=prompt("Dime qué texto quieres poner");
+		document.getElementById("inputtext").value=textointroducido;
+	}
+
+
+
+</script>
+</body>
+
+</html>

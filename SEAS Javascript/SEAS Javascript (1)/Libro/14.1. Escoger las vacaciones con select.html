@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--https://www.youtube.com/watch?v=bBJhs6On7Gk&index=43&list=PLU8oAlHdN5BmpobVmj1IlneKlVLJ84TID-->
+
+<style>
+	
+	#div1{
+		background-color: #DAEBF7;
+		width: 500px;
+		border: 1px solid #000;
+		padding: 5px;
+		text-align: center;
+
+</style>
+
+
+<script> 
+	function VerSeleccion(form){
+
+		var lugar= form.lugarEcogido.selectedIndex; //Le decimos que lugar es el lugar que se ha elegido en el select
+
+		var comer= form.comidaEscogida.selectedIndex; //Le decimos que lugar es el lugar que se ha elegido en el select
+
+		var queHacer= form.queHacerEscogido.selectedIndex; //Le decimos que lugar es el lugar que se ha elegido en el select
+
+		while(form.lugarEcogido.options[lugar].value=="select" || form.comidaEscogida.options[comer].value=="select2" || form.queHacerEscogido.options[queHacer].value=="select3"){ //Si en uno de los formularios no se ha escogido nada y se ha dejado lo de "selecciona.." sale alert
+
+			confirm("No has puesto todos los parámetros");
+			return; //Se pone el return porque sino el bucle sería infinido en el caso de que no se haya seleccionado nada
+		}
+			
+
+		var ventana=window.open("","", 'width=500,height=300'); //Se crea una variable para indicar que ventana es la ventana que se va a abrir
+
+		ventana.document.write("<b>Se ha seleccionado lo siguiente:</b><br>");
+		
+		ventana.document.write("<b>Lugar:</b><br>");
+		ventana.document.write(form.lugarEcogido.options[lugar].value + "<br>")
+
+		ventana.document.write("<b>Sitio:</b><br>");
+		ventana.document.write(form.comidaEscogida.options[comer].value + "<br>")
+
+		ventana.document.write("<b>Qué hacer:</b><br>");
+		ventana.document.write(form.queHacerEscogido.options[queHacer].value + "<br>")
+
+		ventana.document.write("<b>Cuando se irá?:</b><br>");
+		for(var i=0; i<form.dia.length; i++){
+
+			if(form.dia[i].checked){
+				ventana.document.write(form.dia[i].value); ventana.document.close();
+			}
+		}
+}
+
+
+</script>
+
+</head>
+
+
+
+<body>
+
+	<form id="div1"> <!--Especificamos que es un formulario-->
+		<b>Dónde quieres ir de vacaciones?</b>
+		<br><br>
+		
+		<select size="1" name="lugarEcogido"> <!--Añadimos los select y sus opciones-->
+			<option value="select">Selecciona lugar:</option>
+			<option value="londres">Londres</option>
+			<option value="roma">Roma</option>
+			<option value="tenerife">Tenerife</option>
+			<option value="madrid">Madrid</option>
+			<option value="nada">No quiero ir de vacaciones</option>
+		</select>
+
+		<div>
+			<br>
+			<b>Dónde querrás comer?</b>
+			<br><br>
+			<select size="1" name="comidaEscogida">
+				<option value="select2">Selecciona el sitio:</option>
+				<option value="mifune">Mifune</option>
+				<option value="pizzavalles">Pizzavalles</option>
+				<option value="encasa">En casa</option>
+			</select>
+		</div>
+
+		<div>
+			<br>
+			<b>Qué querras hacer?</b>
+			<br><br>
+			<select size="1" name="queHacerEscogido">
+				<option value="select3">Selecciona qué hacer:</option>
+				<option value="pasear">Ir a pasear</option>
+				<option value="amor">Hacer el amor</option>
+				<option value="encasa2">En casa</option>
+			</select>
+
+		</div>
+
+		<br>
+		
+		<b>Qué día quieres ir?</b><br><br>
+
+		<input type="radio" name="dia" value="Mañana">Mañana
+		<input type="radio" name="dia" value="Pasado">Pasado
+		<input type="radio" name="dia" value="Mes que viene">El mes que viene
+		<input type="radio" name="dia" value="Año que viene">El año que viene
+		
+		<br><br><br>
+
+		<input type="button" name="ver" value="Ver qué has seleccionado" onclick="VerSeleccion(this.form)"> <!--Hacemos un botón para ver en otra pantalla todo lo que hemos seleccionado y le pasamos todo el formulario a la función-->
+	</form>
+
+</body>
+</html>

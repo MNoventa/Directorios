@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title></title>
+<script> 
+
+	String.prototype.quitarEtiquetas = function () {
+		return this.replace(/<\/?[^>]+>/gi, '');
+	}
+	
+	var cadena = '<html><head><meta content="text/html; charset=UTF-8" http-equiv="content-type">';
+	cadena += '</head><body><p>Parrafo de prueba</p></body></html>';
+
+	//vemos la cadena de texto antes del metodo 
+	alert(cadena);
+	//presentamos la cadena despues del metodo 
+	alert(cadena.quitarEtiquetas());
+	// Ahora cadena = “Parrafo de prueba"
+</script>
+
+
+</head>
+
+<body>
+ 	
+</body>
+
+</html>

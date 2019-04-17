@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>OBJETOS - EJEMPLO 2</title>
+<script> 
+
+function objetosPredefinidos() {
+var cad = "Objetos predefinidos";
+var nombres = ["Juan","Ana","Julio","Maria","Alicia"]; 
+var numero = 36;
+
+
+
+
+
+document.write("Longitud de la cadena:" + cad.length + "<br>"); 
+
+document.write("Mayúscula: "+cad.toUpperCase()+"<BR>"); 
+
+document.write("De color rojo: "+cad.fontcolor("#FF0000")+"<P>");
+
+document.write("Antes de ordenar el array: " + nombres.join(',')+"<BR>");
+
+document.write("Nombres ordenados: "+nombres.sort()+"<BR>"); 
+
+document.write("Ordenados en orden inverso: " + nombres.sort().reverse()+"<P>");
+
+document.write("Raiz cuadrada de 36: "+Math.sqrt(numero)+"<BR>"); 
+
+document.write("36 elevedo a 5: "+ Math.pow(numero,5)+"<BR>");
+}
+
+</script>
+</head>
+
+
+<body>
+<script>
+
+	objetosPredefinidos();
+
+</script>
+</body>
+
+</html>

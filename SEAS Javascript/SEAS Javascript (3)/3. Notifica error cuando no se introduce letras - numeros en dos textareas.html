@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+<style>
+	#info1, #info2, #info3{
+		float: right;
+		width: 300px;
+		background-color: #f32;
+		text-align: center;
+		display: none;
+		position: static;
+		margin: 10px;
+	}
+
+	.borde{
+		border: 3px solid #DF2E2B;
+	}
+
+
+</style>
+
+<script>
+
+	$(document).ready(function(){
+
+		$("#validar").click(function(){
+
+			var contenido=document.getElementById("tipoTexto").value;
+			alert(contenido)
+			for(var i=0; i<contenido.length; i++){
+				if(!isNaN(contenido[i])){
+					$("#info1").fadeIn();
+					$("#tipoTexto").addClass("borde")
+				
+				}else{
+					$("#info1").fadeOut()
+					$("#tipoTexto").removeClass("borde")
+				}
+			}
+
+			var numero=document.getElementById("tipoNumero").value;
+
+			if(numero<=18 || isNaN(numero)){
+				$("#info2").fadeIn();
+				$("#tipoNumero").addClass("borde");
+			
+			}else{
+				$("#info2").fadeOut();
+				$("#tipoNumero").removeClass("borde");
+			}
+		});
+	});
+	
+	
+</script>
+
+	</head>
+
+	<body>
+
+			<div id="info1">
+				<p><b>
+					¡Notificación de error: Has introducido números en el primer contenedor!
+				</b></p>
+			</div>
+
+
+			<div id="info2">
+				<p><b>
+					¡Notificación de error: Has introducido un número más pequeño que 18 o el contenido no es numerico!
+				</b></p>
+			</div>
+
+
+			<div id="info3">
+				<p><b>
+					¡Notificación de error: Has introducido números en el primer contenedor!
+				</b></p>
+			</div>
+
+
+		<p>Debes introducir texto</p>
+		<input type="text" id="tipoTexto">
+
+		<p>Debes introducir número mayor que 18</p>
+		<input type="text" id="tipoNumero">
+
+		<p>Debes seleccionar algo</p>
+		<select name="seleccion" id="seleccion">
+			<option value="1">Ejemplo 1</option>
+			<option value="2">Ejemplo 2</option>
+			<option value="3">Ejemplo 3</option>
+		</select>
+		
+		<br><br>
+		<input type="button" id="validar" value="Validar">
+
+		
+	</body>
+</html>
+

@@ -1,0 +1,82 @@
+<!doctype html>
+<head>
+<title>OBJETO MATH - Ejemplo1</title>
+
+<script>
+	function calculosmatematicos(numero){ 
+
+		with(Math){
+
+			document.forms[0].RAIZ.value=sqrt(numero); 
+			document.forms[0].SUPERIOR.value=ceil(numero); 
+			document.forms[0].ELEVADO.value=pow(numero,3); 
+			document.forms[0].INFERIOR.value=floor(numero); 
+			document.forms[0].ABSOLUTO.value=abs(numero);
+			document.forms[0].REDONDEO.value=round(numero); 
+			document.forms[0].NEPERIANO.value=log(numero); 
+			document.forms[0].EXPONENTE.value=exp(numero);
+		}
+}
+</script>
+</head>
+ 
+
+ 
+<body bgcolor="#FFFF99">
+	<form name="FORMULARIO">
+		<center>
+			<p>
+				<b>Escribe una cantidad numerica :</b>
+				<input type="text" name="numero" size="20"/>
+			</p>
+			
+			<p>
+				<b>raiz cuadrada :</b>
+				<input type="text" name="RAIZ" size="20" readonly="readonly"/>
+			</p>
+			
+			<p>
+				<b>elevado a 3:</b>
+				<input type="text" name="ELEVADO" size="20" readonly="readonly"/>
+			</p>
+
+			<p>
+				<b>valor absoluto :</b>
+				<input type="tex" name="ABSOLUTO" size="20" readonly="readonly"/>
+			</p>
+
+			<p>
+				<b>logaritmo neperiano :</b>
+				<input type="text" name="NEPERIANO" size="20" readonly="readonly"/>
+			</p>
+
+			<p>
+				<b>redondeo superior :</b>
+				<input type="text" name="SUPERIOR" readonly="readonly"/>
+			</p>
+
+			<p>
+				<b>entero inferior :</b>
+				<input type="text" name="INFERIOR" size="20" readonly="readonly"/>
+			</p>
+
+			<p>
+				<b>redondeo :</b>
+				<input type="text" name="REDONDEO" size="20" readonly="readonly"/>
+			</p>
+
+			<p>
+				<b>exponente :</b>
+				<input type="text" name="EXPONENTE" readonly="readonly"/>
+			</p>
+
+			<p>
+				<input type="button" value="Obtener calculos" name="boton" onclick="calculosmatematicos(document.
+				forms[0].numero.value)">
+			</p>	
+		</center>
+	</form>
+</hr>
+</body>
+
+</html>

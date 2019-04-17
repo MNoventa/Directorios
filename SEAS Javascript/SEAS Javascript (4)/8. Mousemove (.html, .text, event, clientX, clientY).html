@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo13</title>
+<script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+
+<script>
+	
+	var x;
+	x = $(document); 
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() { 
+		var x;
+		x = $(document); 
+		x.mousemove(moverMouse);
+	}
+
+	function moverMouse(evento) { 
+		var x;
+		x = $("#corx");
+
+		//Con html() y text(), en este ejemplo tiene el mismo resultado. Los dos SUBSTITUYEN el contenido del objeto seleccionado por otro que se desee.
+		x.html("La coordenada de x = " + evento.clientX); 
+
+		x = $("#cory");
+		x.text("La coordenada de y = " + evento.clientY);
+	}
+
+</script>
+
+</head>
+
+<body>
+	<p id="corx"> 
+		cordenada x =
+	</p>
+
+	<p id="cory"> 
+		coordenada y =
+	</p>
+</body>
+</html>

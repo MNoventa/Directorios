@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 1 - Objetos</title>
+<script type="text/javascript">
+// Estructura básica del objeto Factura var factura = {
+	var factura ={
+
+		//Propiedades para almacenar datos
+
+		empresa: {
+			nombre: "SEAS",
+			direccion: "Isla de Lanzarote", 
+			telefono: "976 700 660",
+			nif: "xxxxxxxxxx"
+		},
+		
+		cliente: {
+			nombre: "nombre_alumno", 
+			direccion: "direccion_alumno", 
+			telefono: "telefono_alumno", 
+			nif: "nif_alumno"
+		},
+
+		elementos: [
+			{ descripcion: "curso1", cantidad: 1, precio: 250 },
+			{ descripcion: "curso2", cantidad: 1, precio: 250 },
+			{ descripcion: "curso3", cantidad: 1, precio: 100 }
+		],
+
+		informacion: { 
+			baseImponible: 0,
+			iva: 0.21,
+			total: 0,
+			formaPago: "contado"
+		},
+
+		// Métodos de cálculo del total
+
+		calculaTotal : function () {
+			for (var i = 0; i < this.elementos.length; i++) { 
+				this.informacion.baseImponible += this.elementos[i].cantidad * this.elementos[i].precio;
+			}
+
+			this.informacion.total = this.informacion.baseImponible + (this.informacion.baseImponible * this.informacion.iva);
+
+		},
+
+		muestraTotal : function () { 
+			this.calculaTotal();
+			alert("TOTAL = " + this.informacion.total + " euros");
+		}
+	};
+
+	factura.muestraTotal();
+
+</script>
+</head>
+
+<body>
+ 	
+</body>
+
+</html>

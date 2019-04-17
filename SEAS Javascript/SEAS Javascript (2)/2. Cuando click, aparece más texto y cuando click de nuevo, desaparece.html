@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>EV2_UD2</title>
+    <script src="Librerias JQuery/jquery.version.3.3.1.js"></script>
+<style>
+    #contenedor{
+        width:800px;
+        margin: auto;
+    }
+
+    .oculto{
+        display:none;
+    }
+
+</style>
+
+<script>
+    
+    $(document).ready(function(){
+
+        var esVisible=false;
+        $("#ocultar").addClass("oculto");
+
+        $(".enlace").click(function(){
+            if(esVisible==false){
+                $("#adicional").removeClass("oculto");
+                $("#ocultar").removeClass("oculto");
+                $("#seguir").addClass("oculto");
+                esVisible=true;
+
+            }else{
+
+                $("#adicional").addClass("oculto");
+                $("#ocultar").addClass("oculto");
+                $("#seguir").removeClass("oculto");
+                esVisible=false;
+            }
+        });
+    })
+</script>
+    
+</head>
+<body>
+    <div id="contenedor">
+        <p id="texto">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae
+        orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo
+        ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede.
+        Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae
+        orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo
+        ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede.
+        Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede.<span
+            id="adicional" class="oculto">Nullam sit amet nisl elementum elit convallis malesuada.
+            Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque,
+            felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam
+            non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.
+            Donec lacus neque, vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu.
+            Nam sed tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna. Aenean
+            vitae enim. Integer lacus. Vestibulum venenatis erat eu odio. Praesent id metus.</span></p>
+        <a class="enlace" id="seguir" href="#">Seguir leyendo</a>
+        <a class="enlace" id="ocultar" href="#">Ocultar</a>
+
+    </div>
+
+<script>
+
+</script>
+        
+</body>

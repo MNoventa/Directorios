@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+
+	body{
+		background-color: #B6B6B6;
+	}
+
+	body h1{
+		color: #9B3737;
+	}
+
+	#galeriaImg{
+		height: 500px;
+		background-color: #fff;
+		margin-bottom: 25px;
+		border: 3px solid #000;
+		width:800px;
+	}
+
+	#galeriaImg img{
+		width: 750px;
+		margin: 20px;
+	}
+
+</style>
+
+
+<script>
+var galeria="";
+var z=0;
+
+function inicio(){
+	galeria=document.querySelectorAll("img");
+	ocultar();
+	galeria[z].style.display="block";
+}
+
+function ocultar(){
+	galeria.forEach(function(enCadaImagen){
+		enCadaImagen.style.display="none";
+	});
+}
+
+function siguienteImg(){
+	if(z==galeria.length){
+		galeria[z].style.display="block";
+	}
+	
+	else if(z<galeria.length-1){
+		z++;
+		ocultar();
+		galeria[z].style.display="block";
+	}	
+}
+
+function anteriorImg(){
+	if(z==0){
+		galeria[z].style.display="block";
+
+	}else if(z>0){
+		z--;
+		ocultar();
+		galeria[z].style.display="block";
+	}
+}
+
+
+</script>
+</head>
+
+<body onload="inicio()">
+    <center>
+        <div>
+            <h1>Galeria de imágenes</h1>
+        </div>
+        <div id="galeriaImg">
+            <img src="img/messi.jpeg" alt="">
+            <img src="img/umtiti.jpg" alt="">
+            <img src="img/iniesta.jpg" alt="">
+            <img src="img/img atenuadas (25.1)/dembele.jpg" alt="">
+            <img src="img/img atenuadas (25.1)/umtiti.jpg" alt="">
+        </div>
+
+        <input type="button" onclick="anteriorImg()" id="botonAnterior" value="Anterior imágen" >
+        <input type="button" onclick="siguienteImg()" id="botonSiguiente" value="Siguiente imágen" >
+    </center>
+</body>
+</html>

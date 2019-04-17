@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+
+<script> 
+
+	function limita(maximoCaracteres) {
+		var elemento = document.getElementById("texto"); 
+		if (elemento.value.length >= maximoCaracteres) {
+			return false;
+		
+		}else {
+			return true;
+		}
+	}
+</script>
+</head>
+
+<body>
+	<textarea id="texto" onkeypress="return limita(10)" rows="5" cols="20" ></textarea>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio SEAS 2</title>
+<link rel="stylesheet" href="micss2.css">
+
+
+
+</head>
+
+<body>
+
+<script>
+	
+var array=[true, 5, false, "Cocodrilo", "Gato", 2];
+
+if(array[3].length<array[4].length){
+	alert("Cocodrilo tiene menos letras que gato");
+}
+
+else if(array[3].length>array[4].length){
+	alert("Gato tiene menos letras que cocodrilo");
+}
+
+else{
+	alert("son iguales");
+}
+
+//Obtener un resultado false:
+
+var valor1=array[0];
+var valor2=array[2];
+
+var resultado=valor1&&valor2;
+alert(resultado);
+
+var resultado=valor1||valor2;
+alert(resultado);
+
+var valor3=array[1];
+var valor4=array[5];
+
+var suma=valor3+valor4;
+alert(suma);
+
+var resta=valor3-valor4;
+alert(resta);
+
+var multiplicacion=valor3*valor4;
+alert(multiplicacion);
+
+var division=valor3/valor4;
+alert(division);
+
+</script>
+
+</body>
+
+</html>

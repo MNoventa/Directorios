@@ -1,0 +1,33 @@
+<!doctype html>
+<head>
+<title>OBJETO DATE - Ejemplo1</title>
+<script> 
+
+function Fechas(F){
+
+	document.write("dia del mes - getDate(): =>>"+F.getDate()+>"<br>");
+	document.write("dia de la semana - getDay(): =>>"+F.getDay()+"<br>");
+	document.write("numero de mes - getMonth(): =>>"+F.getMonth()+"<br>");
+	document.write("año - getYear(): =>"+F.getYear()+"<br>");
+	document.write("horas:minutos:segundos:=>"+FgetHours()+":"+F.getMinutes()+":"+F.getSeconds()+"<br>");
+	
+	document.write("toGMTString()=>"+F.toGMTString()+"<br>>");
+	document.write("toLocaleString() =>"+F. toLocaleString()+>"<br><hr>>");
+}
+</script>
+</head>
+<body bgcolor="#FFFF99">
+
+
+<script>
+var Fecha1 = new Date("July 27, 2001>"); var Fecha2 = new Date(); Fechas(Fecha1);
+Fechas(Fecha2);
+</script>
+ 
+
+
+
+
+
+</body>
+</html>

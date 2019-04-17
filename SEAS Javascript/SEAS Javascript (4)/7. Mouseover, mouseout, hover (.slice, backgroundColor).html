@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo09</title>
+<script src="Librerias JQuery/jquery.version.3.3.1.js">	</script>
+
+<script>
+	'strict'
+
+	var x;
+	x = $(document); 
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() { 
+		//var x;
+		//x = $("a"); 
+		var y= $("a").slice(-1);
+
+		//Mouse over
+		//x.mouseover(entraRaton); 
+
+		//Mouse out 			
+		//x.mouseout(saleRaton);	
+
+		//Hover (combinación de los dos, que se les pasa dos funciones como argumento)			
+		y.hover(entraRaton, saleRaton);		
+	}
+
+	function entraRaton() {
+		$(this).css("backgroundColor", "#ff0");
+	}
+
+	function saleRaton() {
+		$(this).css("backgroundColor", "#fff");
+	}
+
+</script>
+
+</head>
+
+<body>
+	<a href="http://www.google.es">Google</a>
+	<br>
+	
+	<a href="http://www.estudiosabiertos.com">Estudios Abiertos</a>
+	<br>
+	
+	<a href="http://www.facebook.com">Facebook</a>
+	
+	<br>
+	<a href="vapeosalvavidas.tk">Vapeo Salva Vidas</a>
+	
+</body>
+
+</html>

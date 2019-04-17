@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio SEAS 3</title>
+<link rel="stylesheet" href="micss2.css">
+
+
+
+</head>
+
+<body>
+
+<script>
+
+var numeros=[""];
+var i=0;
+
+for (i=0; i<=2; i++){
+	numeros[i]=prompt("Introduce un número");
+}
+
+/* También se podría hacer:
+
+while (i<=2){
+	numeros[i]=prompt("Introduce un número");
+	i++;
+}*/
+
+if (numeros[0]>numeros[1] && numeros[0]>numeros[2]){
+
+	document.write("El numero "+ numeros[0] +" es el mayor");
+}	
+
+if (numeros[1]>numeros[0] && numeros[1]>numeros[2]){
+
+	document.write("El numero "+ numeros[1] +" es el mayor");
+}
+
+if (numeros[2]>numeros[1] && numeros[2]>numeros[0]){
+
+	document.write("El numero "+ numeros[2] +" es el mayor");
+}
+
+
+</script>
+
+</body>
+
+</html>
