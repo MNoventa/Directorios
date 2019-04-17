@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<script src="js/jquery.version.3.3.1.js"></script>
+<script>
+	
+	'use strict'
+	//API Rest: Servicio o backend que nos devuelve datos en JSON. Puede recibir peticiones (por post, put, get, delete, etc.)
+
+	//https://reqres.in/api/users?page=2
+
+
+	//Fetch. Es un sustituto de AJAX o un metodo que hace peticiones AJAX (peticiones asincronas con el servidor)
+
+	
+
+	//**********************Mostrar unicamente los datos de un solo usuario********************** 
+
+	var div_usuarios = document.querySelector("#usuarios");
+	var div_janet = document.querySelector("#janet");
+
+	
+
+		//Se llama a la function que devuelve: fetch('https://reqres.in/api/users');
+		//Cada llamada a funciones, devuelve fetch para poder seguir haciendo peticiones, todo en distintos bloques
+		getUsuarios()
+
+			.then(datos => datos.json())	
+			
+			.then(todo => {
+				//usuarios = todo.data;
+				listadoUsuarios(todo.data)
+
+				return getInfo();        //         Encadenamiento de promesas, acabar de hacer una y llamar a otra.
+
+			})
+
+			.then(datos => {
+				document.querySelector("#alumno").innerHTML = datos;
+				console.log("¡Carga finalizada!")
+				return getJanet();        //       Encadenamiento de promesas, acabar de hacer una y llamar a otra.
+			})
+
+			.then(datos => datos.json())
+
+			.then(janet => {
+				mostrarJanet(janet.data)   
+
+			})
+
+//************Capturar error************
+			.catch(error => {
+				console.log(error + " No hay internet / El servidor está caido / Has hecho mal la petición");
+			});
+
+
+
+
+		function getUsuarios(){		
+			return fetch('https://reqres.in/api/users');
+			
+			/*Generar error
+			return fetch('https://reqres.in/apiKAJNSIJAN/users');
+			*/
+		}
+
+		function getJanet(){
+			return fetch('https://reqres.in/api/users/2');
+		}
+
+
+		function listadoUsuarios(usuarios){
+
+			usuarios.forEach((usuario, indice) => {
+				let nombre = document.createElement('h3');
+				nombre.innerHTML = indice + ". " + usuario.first_name + " " + usuario.last_name;
+
+				document.querySelector("#usuarios").appendChild(nombre);
+
+				document.querySelector(".loading").style.display = "none";
+			});
+		}
+
+		function mostrarJanet(usuario){
+
+
+			let nombre = document.createElement('h4');
+			let avatar = document.createElement('img');
+
+			nombre.innerHTML = usuario.first_name + " " + usuario.last_name;
+			avatar.src = usuario.avatar;
+			avatar.width = '100';
+
+			document.querySelector("#janet").appendChild(nombre);
+			document.querySelector("#janet").appendChild(avatar);
+
+			document.querySelector("#janet .loading").style.display = "none";
+		}
+
+
+
+//*****************************************Crear una promesa*****************************************
+
+		function getInfo(){
+
+			var alumno = {
+				nombre: 'Mario',
+				apellidos: 'García',
+				url: 'vapeosalvavidas.tk'
+			}
+
+			console.log("Esperando la carga...")
+			//***Creación promesa***
+
+
+			//new: Es una palabra reservada para instanciar/crear un bjeto
+			//resolve: La promesa se ha resuelto.
+			//reject: La promesa no se ha resuelto.
+			//stringify: Convierte un JSON a un string.
+			
+			return new Promise((resolve, reject) => {
+
+				//Relentizar la operación para que tarde en mostrarlo por pantalla:
+				var alumno_string;	
+
+				setTimeout(function(){
+
+					//El JSON creado lo convierte en json-string para que se pueda visualizar por pantalla
+					alumno_string = JSON.stringify(alumno);	
+
+					if(typeof alumno_string != 'string'){
+						//si alumno_string no es un json-string, aparece error y deniega la promesa
+						return reject('¡Error Mario!')
+					
+					}else{
+						return resolve(alumno_string);
+
+						//Si solo queremos saber el nombre de alumno:
+						//return resolve(alumno.nombre);
+					}
+
+				},3000);
+			})			
+		}
+		
+
+</script>
+<body>
+	<h1>Lista de usuarios</h1>
+	
+	<div id="usuarios">
+		
+		<span class="loading">Cargando datos globales...</span>
+
+	</div>
+	<hr>
+	<div id="alumno">
+		
+		<span class="loading">Cargando alumno...</span>
+
+	</div>
+	<hr>
+	<div id="janet">
+		
+		<span class="loading">Cargando usuario...</span>
+
+	</div>
+
+</body>
+</html>

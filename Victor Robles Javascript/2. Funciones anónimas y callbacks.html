@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formularios I</title>
+
+
+<script>
+	function sumame(numero1, numero2, sumaYMuestra, sumaPorDos){
+		
+		var sumar = numero1 + numero2;
+
+		sumaYMuestra(sumar);
+		sumaPorDos(sumar);
+		return sumar;
+	}
+
+	sumame(5,7, function(dato){ //Función callback. En este caso, se le está pasando como parámetro a la función sumame, dos números y dos funciones (que son también parámetros dentro de esta misma función). Estos dos estan llamando a otra función para que se ejecuten
+			console.log("La suma es ", dato)
+	},
+		dato =>{ //Función flecha, hace exactamente lo mismo que la función anterior. Se utiliza actualmente en los nuevos estándares para escribir menos código. 
+			console.log("La suma por dos es:", (dato*2));
+	});
+</script>
+
+</head>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<script src="js/jquery.version.3.3.1.js"></script>
+<script>
+	
+	'use strict'
+	//API Rest: Servicio o backend que nos devuelve datos en JSON. Puede recibir peticiones (por post, put, get, delete, etc.)
+
+	//https://reqres.in/api/users?page=2
+
+
+
+
+	//Fetch. Es un sustituto de AJAX o un metodo que hace peticiones AJAX (peticiones asincronas con el servidor)
+
+	
+	var div_usuarios = document.querySelector("#usuarios");
+	var usuarios = [];
+	var cantidadDeInfo;
+
+	fetch('https://reqres.in/api/users')
+		/*Con .json() convierte un archivo a un archivo json utilizable
+		
+			.then(function(data){
+				return data.json()
+			})
+
+		Automaticamente ya te hace return data.json()*/
+
+		//Lo anterior sería lo mismo que:
+		.then(data => data.json())
+			
+		//Guardamos los datos de data, en la var usuarios
+		.then(users => {
+			usuarios = users.data; //data es un array de usuarios, dentro del API.
+			console.log(usuarios)
+
+			cantidadDeInfo = users.total_pages;
+			console.log(cantidadDeInfo);
+
+			cantidadDeInfo = users.total;
+			console.log(cantidadDeInfo);
+
+
+		//Mostrar todos los usarios en pantalla
+			usuarios.forEach((usuario, i) => {
+				let nombre = document.createElement('h3');
+				nombre.innerHTML = i + ". " + usuario.first_name + " " + usuario.last_name;
+
+				document.querySelector("#usuarios").appendChild(nombre);
+
+		//Quitar loading
+				document.querySelector(".loading").style.display = "none";
+			});
+		});
+
+		
+
+</script>
+<body>
+	<h1>Lista de usuarios</h1>
+	
+	<div id="usuarios">
+		
+		<span class="loading">Cargando...</span>
+
+	</div>
+
+</body>
+</html>

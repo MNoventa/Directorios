@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Curso JavaScript</h1>
+	
+	<section id="miSeccion">
+		
+		<hr>
+
+	</section>
+
+	<div id="micaja">Soy una caja</div>
+	<div id="micaja">Primer div</div>
+	<div id="micaja">Segundo div</div>
+	<div id="micaja">Tercer div</div>
+
+<script>
+	
+	//Seleccionar todos los divs
+
+		var todosLosDivs = document.getElementsByTagName("div");
+	
+	//Sacar elementos que tiene div en la posición 2
+
+		var segundoElemento = todosLosDivs[2].textContent;
+		console.log(segundoElemento);
+
+	//Sacar elementos que tiene div en la posición 2, y modificar su contenido
+
+		var segundoElemento = todosLosDivs[2];
+		segundoElemento.innerHTML = "Otro texto para el 2do elemento"
+
+	//Recorrer todos los divs del documento
+
+		/* De la siguiente forma no podría valer, porque forEach solo está utilizado para recorrer un array, pero no una HTML colection (galeria de elementos html, en este caso, de divs) 
+
+		todosLosDivs.forEach((valor, indice) => {
+			var parrafo = document.createElement("p");
+			var texto = document.createTextNode(valor);
+			parrafo.appendChild(texto);
+			document.querySelector("#miseccion").appendChild(parrafo);
+		});
+
+		*/
+		var hr = document.createElement("hr");
+		var valor;
+
+		for (valor in todosLosDivs){
+
+			//Si no se hiciera la primera comprovación crearía divs randoms que no pertenecen al documento, o al menos que yo haya creado.
+			if(typeof todosLosDivs[valor].textContent =="string"){
+				//Se va a recorrer la galeria HTML, y por cada div que encuentre, creará un "li".
+				var lista = document.createElement("li");
+				//Se crea una variable que guarda el texto de cada posición del array (que es cada div).
+				var texto = document.createTextNode(todosLosDivs[valor].textContent);
+				//Se incrusta la información que guarda "texto", en cada posición de la "lista".
+				lista.append(texto);
+				//Se añade toda la información, despues del objeto "#miSeccion".
+				document.querySelector("#miSeccion").append(lista);
+			}
+		}
+
+		//Se añade al final de toda la lista creada dinamicamente, un hr(creado arriba).
+		document.querySelector("#miSeccion").append(hr);
+</script>
+</body>
+</html>

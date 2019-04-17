@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script>
+	/*
+		1. Pida 6 numeros por pantalla y los meta en una array-
+		2. Mostrar el array entero (todos sus elementos) en el cuerpo de la pagina y en la consola
+		3. Ordarlo y mostrarlo
+		4. Invertir su orden y mostrarlo
+		5. Mostrar cuantos elementos tiene el array
+		6. Busqueda de un valor introducido por el usuario, que nos diga si lo encuentra y su indice (Se valora uso de funciones)
+	*/
+
+	'use strict'
+
+	function mostrarArray(elementos, textoCustom = ""){ //elementos es la array que le pasamos. Por default, textoCustom va vacío
+
+		document.write("<h1>Contenido del array " + textoCustom + "</h1>");
+
+		document.write("<ul>");
+
+			elementos.forEach((elemento, index) => {
+				document.write("<li> <strong>" + index + "</strong>" + " - " + elemento +"</li> <br>");
+			})
+
+		document.write("</ul>");	
+	}
+
+	// 1. Pedir 6 numeros
+
+		//var numeros = new Array (6);
+		var numeros = []; //Lo mismo que lo anterior
+
+		for (var i=0; i<=5; i++){
+			//numeros[i] = parseInt(prompt("Introduce un número", 0));
+			numeros.push(parseInt(prompt("Introduce un número", 0))); //Lo mismo que lo anterior
+		}
+
+
+	// 2. Mostrar en el cuerpo de la página
+
+		mostrarArray(numeros);
+
+	// 2. Mostrar en consola
+
+		console.log(numeros);
+
+	// 3. Ordenar array y mostrar en pantalla
+
+		numeros.sort(function(a,b) { //Por si solo, sort, ordena de forma alfabetica. Al ser números, y no haber un método de sort que ordene numéricamente (sería, sortNumbers, por ejemplo) se tiene que hacer una función callback, pasandole dos parámetros y luego restándolos. Si queremos que sea en orden DESCENDENTE, sería b-a.
+			return a-b;
+		});
+
+		mostrarArray(numeros, "ordenados");
+
+	// 4.  Invertir orden array y mostrar en pantalla
+
+		numeros.reverse();
+		mostrarArray(numeros, "ordenados invertidamente");
+
+	// 5. Mostrar elementos del array
+
+		document.write("<h1>La cantidad de elementos del array es de: </h1>" + numeros.length + "<br>");
+
+	// 6. Busqueda
+
+		var busqueda = parseInt(prompt("Busca un número", 0));
+
+		var posicion = numeros.findIndex(numero => numero == busqueda);
+
+		if(posicion && posicion != -1){ //Es igual a poner: posicion==true
+			document.write("<hr><h1>Encontrado </h1>"); //Hay que tener en cuenta que hará la busqueda en la array desordenada con reverse()
+			document.write("<h1>Posición de la búsqueda: </h1>" + posicion + "<hr>");
+		
+		}else{
+			document.write("<h1>No encontrado </h1><hr>");
+		}
+
+</script>	
+
+</body>
+</html>

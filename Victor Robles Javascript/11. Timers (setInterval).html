@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<h1>Cambiaré de tamaño</h1>
+
+	<button id="stop">Stop</button>
+	<button id="start">Start</button>
+
+	<script>
+		
+		'use strict'
+
+		
+		window.addEventListener('load', function(){
+
+			//Una vez el window esté cargado, llama a la función set interval, cada segundo
+
+			//Si en vez de setInverval, se utiliza setTimeOut, solo se ejecuta una sola vez
+			
+
+
+			function intervalo(segundos){
+				tiempo = setInterval(function(){
+				console.log("Set interval ejecutado");
+
+				var encabezado = document.querySelector("h1");
+
+				if(encabezado.style.fontSize == "50px"){
+					encabezado.style.fontSize = "20px"
+				
+				}else{
+					encabezado.style.fontSize = "50px"
+				}
+
+				}, segundos);
+
+				return tiempo;
+			}
+			
+
+
+			var tiempo = intervalo(2000);
+			console.log(tiempo);
+
+			//Boton para que cuando se haga click en el, pare en interval
+
+			var stop = document.querySelector("#stop");
+
+			stop.addEventListener("click", function(){
+				stop(clearInterval(tiempo));
+				console.log(tiempo);
+			});
+
+			//Boton para que cuando se haga click en el, reanude en interval
+
+			var start = document.querySelector("#start");
+
+			start.addEventListener("click", function(){
+				intervalo(1000);
+				console.log(tiempo);
+			});
+		});
+	</script>
+</body>
+</html>

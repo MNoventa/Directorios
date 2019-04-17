@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script>
+	var lenguajes=["PHP", "JS", "Go", "Java", "C++", "C#"];
+
+	//MÉTODO forEach con función flecha: 
+
+	// lenguajes: Nombre del array .forEach
+	// elemento: Parámetro donde está posicionado en ese momento el bucle (contenido dentro de la "i" en un bucle clásico)
+	// indice: La posición donde está posicionado en ese momento el bucle (sería el "i" en un bucle clásico)
+	// => : Llamada a la función
+
+	lenguajes.forEach((elemento, indice)=>{
+
+		document.write("<li>" + indice + " - " + elemento + "</li>");
+	});
+
+
+	//MÉTODO for in
+
+	//lenguaje: indice por donde se está recorriendo la array (se puede declarar con var o let)
+
+	for (var lenguaje in lenguajes){
+		document.write("<li>" + lenguajes[lenguaje] + "</li>");
+	}
+
+</script>
+
+</body>
+</html>

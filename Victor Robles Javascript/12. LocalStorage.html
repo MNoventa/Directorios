@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="peliculas"></div>
+<script>
+	
+	//LocalStorage: Es una forma de almacenar información en el navegador que permanece cuando se navega por Internet (Es igual a html5 web storage)
+
+	'use strict'
+
+	//Comrpobar que LocalStorage está disponible
+
+	if(typeof(Storage) =='undefined'){
+		console.log("LocalStorage no disponible")
+	}else{
+		console.log("Compatible con LocalStorage")
+	}
+
+	//Guardar un dato en LocalStorage
+
+	localStorage.setItem("titulo", "Curso de JS");
+
+	//Recuperar elemento y meterlo en el html
+
+	document.querySelector("#peliculas").innerHTML = localStorage.getItem("titulo");
+
+	//Guardar objeto JSON en local storage. Para poder enviar un JSON, se tiene que convertir en un string
+
+	var usuario = {
+		nombre: "Mario García",
+		email: "mario@mario.com",
+		web: "www.mario.com"
+	}
+
+	localStorage.setItem("usuarioSeleccionado", JSON.stringify(usuario)); //Convertir JSON a un string -> stringity
+
+	//Recuperar objeto JSON string a JSON normal
+
+	var usuarioConvertido = JSON.parse(localStorage.getItem("usuarioSeleccionado"));
+
+	document.querySelector("#peliculas").append(" - " + usuarioConvertido.email + " - " + usuarioConvertido.nombre)
+
+	//La pagina interpreta nuestro codigo, y aun que quitemos el localStorage en el navegador, como una vez recardada vuelve a cargar nuestro codigo, vuelve a aparecer. Si si quiere borrar del todo el localStorage:
+
+	//localStorage.removeItem("usuarioSeleccionado"); //Borrar solo un elemento
+	//localStorage.clear(); //Borrarlo todo
+</script>
+</body>
+</html>

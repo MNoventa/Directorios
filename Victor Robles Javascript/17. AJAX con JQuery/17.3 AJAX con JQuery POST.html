@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+		#datos{
+			border: 2px solid green;
+			width: 250px;
+			height: 250px;
+			overflow: scroll;
+		}
+	</style>
+</head>
+<body>
+	
+	<script></script>
+
+	<h1>AJAX - JQuery</h1>
+	
+	<form action="https://reqres.in/api/users" method="POST" id="formulario">
+		Nombre: <input type="text" name="first_name"><br>
+		Web: <input type="text" name="web">
+
+		<input type="submit">
+	</form>
+		
+	<br>
+
+	<div id="datos"></div>
+
+	<script>
+		
+		$(document).ready(function(){
+
+			//POST
+
+			//Enviar datos a una base de datos
+
+			$("#formulario").submit(function(e){
+
+				e.preventDefault();
+
+				var usuario = {
+					name: $('input[name="first_name"]').val(),
+					web: $('input[name="web"]').val()
+				}
+
+				console.log(usuario)
+
+				//Recoje la dirección que tiene como formulario
+
+				//.attr en JQuery y .getAttribute en JS
+
+				$.post($(this).attr("action"), usuario, function(response){
+					console.log(response)
+				
+				}).done(function(){
+					alert("Usuario añadido con éxito")
+				});	
+
+				return false;
+			})		
+		});
+
+	</script>
+
+</body>
+</html>			

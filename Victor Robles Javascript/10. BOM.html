@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		'use strict'
+
+	function getBOM(){
+		//Comprobar ancho de la pantalla del navegador
+		console.log(window.innerWidth);
+		//Comprobar alto de la pantalla del navegador
+		console.log(window.innerHeight);
+		//Comprobar ancho de la pantalla fisica
+		console.log(screen.width);
+		//Comprobar alto de la pantalla fisica
+		console.log(screen.height);
+		//Sacar por cosola todos los parametros de window
+		console.log(window.location);
+		//Dirección de mi documento
+		console.log(window.location.href)
+	}	
+
+	//Si en consola llamamos a la función getBOM, nos dice dinámicamente el tamaño total de la pantalla en ese momento
+	getBOM();
+
+	//Si en consola llamamos a la función redirigirAOtraWeb() y le pasamos por parámetro una página web, nos dirigirá directamente a ella
+	function redirigirAOtraWeb(url){
+		//Comprobar ancho de la pantalla del navegador
+		window.location.href = url;
+	}
+	</script>
+</body>
+</html>

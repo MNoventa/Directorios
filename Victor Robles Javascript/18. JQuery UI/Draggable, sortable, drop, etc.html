@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="../js/jquery-ui-1.12.1/jquery-ui.min.css">
+	<link rel="stylesheet" href="../js/jquery-ui-1.12.1/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="../js/jquery-ui-1.12.1/jquery-ui.theme.min.css">
+	<script src="../js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<style>
+		.elemento{
+			width: 300px;
+			height: 200px;
+			border: 4px solid black;
+			background: lightblue;
+			margin: 20px;
+			margin: left;
+		}
+
+		.lista-selectable, .lista-sortable{
+			width: 80%;
+			padding: 20px;
+			border: 1px solid #000;
+			list-style: none;
+			cursor: pointer;
+		}
+		
+		/*Clase que se crea por libreria al seleccionar un elemento*/
+		ul .ui-selecting {background: green}
+		
+		/*Clase que se crea por libreria al seleccionar un elemento*/
+		ul .ui-selected {background: blue}
+
+		#elemento-movido{
+			width: 100px;
+			height: 100px;
+			border: 4px solid red;
+		}
+
+		#area{
+			width: 300px;
+			height: 300px;
+			border: 4px solid green;
+		}
+
+	</style>
+
+</head>
+<body>
+	
+	<h1>JQuery UI - Draggable</h1>
+	
+	<h2>Selectable</h2>
+
+	<ul id="lista1">
+		<li class="lista-selectable">Elemento 1</li>
+		<li class="lista-selectable">Elemento 2</li>
+		<li class="lista-selectable">Elemento 3</li>
+		<li class="lista-selectable">Elemento 4</li>
+		<li class="lista-selectable">Elemento 5</li>
+	</ul>
+
+	<h2>Draggable y resizable</h2>
+
+	<div class="elemento">Elemento 1</div>
+	<div class="elemento">Elemento 2</div>
+	<div class="elemento">Elemento 3</div>
+	
+	<h2>Sortable</h2>
+
+	<ul id="lista2">
+		<li class="lista-sortable">Elemento 1</li>
+		<li class="lista-sortable">Elemento 2</li>
+		<li class="lista-sortable">Elemento 3</li>
+		<li class="lista-sortable">Elemento 4</li>
+		<li class="lista-sortable">Elemento 5</li>
+	</ul>
+
+	<h2>Draggable</h2>
+
+	<div id="elemento-movido"></div><br>
+	<div id="area"></div>
+		
+	</div>
+
+</body>
+
+<script>
+	
+	$(document).ready(function(){
+
+		//Mover elemento por la página
+		$(".elemento").draggable();
+
+		//Redimensionar elementos
+		$(".elemento").resizable();
+
+		//Seleccionar elementos
+		$("ul#lista1").selectable();
+
+		//Ordenar elementos
+		$("ul#lista2").sortable({
+
+			update: function(event, ui){
+				console.log("ha cambiado la lista")
+			}
+		});
+
+		//Drop
+		$("#elemento-movido").draggable();
+		$("#area").droppable({
+			drop: function(e){
+				console.log("Has soltado algo");
+			}
+		})
+
+	})
+
+</script>
+
+</html>

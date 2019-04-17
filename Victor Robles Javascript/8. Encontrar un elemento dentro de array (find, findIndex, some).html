@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script>
+	
+	var lenguajes=["PHP", "JS", "Go", "Java", "C++", "C#"];
+
+	/*Se le aplica el método find al array, y se le pasa una función anonima por parametro. 
+
+	Para entenderlo sería: ¿Dentro de "lenguajes", hay algún "lenguaje" que sea igual a (...)?*/
+
+	var busqueda= lenguajes.find(function(lenguaje){
+		return lenguaje == "JS";
+	});
+
+	console.log(busqueda); //Si lo encuentra, simplemente aparece un texto con el elemento que estas buscando.
+
+
+	//Lo mismo que lo anterior pero usando la función flecha.
+
+	var busqueda= lenguajes.find(lenguaje => lenguaje == "Java");
+
+	console.log(busqueda); //Si lo encuentra, simplemente aparece un texto con el elemento que estas buscando.
+	
+
+
+	//Cuando encuentra lo que estamos buscando, aparece el indice de donde se encuentra el mismo
+
+	var busqueda= lenguajes.findIndex(lenguaje => lenguaje == "Java");
+	console.log(busqueda); //Si lo encuentra, aparece posición de indice de, en este caso (Java).
+
+
+	//****************************************************************************************************************
+
+
+	//Aplicar filtro para comprobar si hay elementos mayores/menores/iguales dentro de una array con respecto a un elemento que yo escojo
+
+	var precios=[10, 20, 50, 80, 12];
+
+	var busqueda= precios.some(precio => precio >= 20);
+	console.log(busqueda); //Si hay "precio" mayor o igual a 20, retorna true 
+
+</script>
+				
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formularios I</title>
+
+
+<script>
+
+	var nombre=prompt("Pon tu nombre");
+	var apellido1=prompt("Pon tu primer apellido");
+	var apellido2=prompt("Pon tu segundo apellido");
+
+	var plantilla = ` 
+		<h1>Hola que tal</h1>
+		<h3>Mi nombre es: ${nombre}</h3>
+		<h3>Mis apellidos son: ${apellido1} ${apellido2}</h3>
+	`; //Comillas invertidas
+
+	document.write(plantilla);
+</script>
+
+</head>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+		#datos{
+			border: 2px solid green;
+			width: 250px;
+			height: 250px;
+			overflow: scroll;
+		}
+	</style>
+</head>
+<body>
+	
+	<script></script>
+
+	<h1>AJAX - JQuery</h1>
+	<div id="datos"></div>
+
+	<script>
+		
+		$(document).ready(function(){
+
+			//GET
+			//Petición por GET para recuperar JSON. La web a la queremos acceder es https://reqres.in/api/users?page=3, por eso enlazamos users con {page: 3}
+
+			$.get("https://reqres.in/api/users", {page: 3}, function(response){
+				//data es el lugar donde estan los usuarios
+				response.data.forEach((element, index) => {
+					$("#datos").append("<p>"+ element.first_name +"</p>")
+				});
+			});			
+		});
+
+	</script>
+
+</body>
+</html>			

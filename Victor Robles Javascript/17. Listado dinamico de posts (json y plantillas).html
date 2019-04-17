@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+
+	</style>
+</head>
+<body>
+	
+	<section id="content">
+		<div id="posts">
+			<!-- Cargar posts dinamicamente con JSON-->
+		</div>
+	</section>
+
+
+	<script>
+		
+		$(document).ready(function(){
+
+			//Array de JSON
+			var posts = [
+				{
+					title: "Prueba de titulo 1",
+					date: new Date(),
+					content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis consequuntur facilis unde enim quis, nulla, harum recusandae quo, consectetur totam soluta? Odit deserunt nostrum, labore quia hic commodi sapiente velit?'
+				},
+				{
+					title: "Prueba de titulo 2",
+					date: new Date(),
+					content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis consequuntur facilis unde enim quis, nulla, harum recusandae quo, consectetur totam soluta? Odit deserunt nostrum, labore quia hic commodi sapiente velit?'
+				},
+				{
+					title: "Prueba de titulo 3",
+					date: new Date(),
+					content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis consequuntur facilis unde enim quis, nulla, harum recusandae quo, consectetur totam soluta? Odit deserunt nostrum, labore quia hic commodi sapiente velit?'
+				},
+				{
+					title: "Prueba de titulo 4",
+					date: new Date(),
+					content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis consequuntur facilis unde enim quis, nulla, harum recusandae quo, consectetur totam soluta? Odit deserunt nostrum, labore quia hic commodi sapiente velit?'
+				},
+			];
+
+			posts.forEach((item, index) =>{
+
+				//Plantilla
+				var post = `
+					<article class="post">
+						<h2>${item.title}</h2>
+						<span class="date">${item.date}</span>
+						<p>${item.content}</p>
+					</article>
+				`
+				$("#posts").append(post)
+			})
+		});
+
+	</script>
+
+</body>
+</html>			

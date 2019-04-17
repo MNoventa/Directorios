@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Programación orientada a objetos en JS y Typescript</h1>
+
+	<script>
+		var bicicleta = {
+			color: "rojo",
+			modelo: "BMX",
+			frenos: "De disco",
+			velocidadMaxima: "60km",
+			cambiarColor: function(nuevo_color){
+				//Lo mimso que lo siguiente: bicicleta.color = nuevo_color;
+				this.color = nuevo_color;
+				console.log(this)
+			}
+		};
+
+		bicicleta.cambiarColor("Azul")
+
+
+	</script>
+</body>
+</html>

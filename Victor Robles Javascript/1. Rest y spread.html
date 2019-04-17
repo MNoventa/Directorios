@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formularios I</title>
+
+
+<script>
+'use strict'
+
+// Método REST:
+
+function listadoFrutas(fruta1, fruta2, ...restoDeFrutas){
+  console.log("Fruta 1: ", fruta1);
+  console.log("Fruta 2: ", fruta2);
+  console.log(restoDeFrutas); //Aqui se aplico rest, después de los tres puntos, se declara otro parámetro donde se van a almacenar todos los demás elementos dentro de una array.
+}
+
+listadoFrutas("Naranja", "Manzana", "Sandia", "Pera", "Melon", "Coco");
+
+// Método SPREAD:
+
+var frutas = ["Naranja", "Manzana"]
+listadoFrutas(...frutas, "Sandia", "Pera", "Melon", "Coco") //Con spread, se divide la array y muestra los elementos separados uno detrás de otro como en el listado de frutas de más arriba (si no ubieramos puesto "...", fruta1 sería una array de dos elementos)
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

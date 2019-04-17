@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<script src="js/jquery.version.3.3.1.js"></script>
+<script>
+	
+	'use strict'
+	//API Rest: Servicio o backend que nos devuelve datos en JSON. Puede recibir peticiones (por post, put, get, delete, etc.)
+
+	//https://reqres.in/api/users?page=2
+
+
+	//Fetch. Es un sustituto de AJAX o un metodo que hace peticiones AJAX (peticiones asincronas con el servidor)
+
+	
+
+	//**********************Mostrar unicamente los datos de un solo usuario********************** 
+
+	var div_usuarios = document.querySelector("#usuarios");
+	var div_janet = document.querySelector("#janet");
+
+	
+
+
+		getUsuarios()
+			//Convierte lo que nos devuelve la API, en formato JSON usable
+			
+			/*.then(function(datos){
+				return datos.json();
+			})
+
+			Lo anterior seria lo mismo que lo siguiente:*/
+
+			.then(datos => datos.json())	
+			
+			.then(todo => {
+				//usuarios = todo.data;
+				listadoUsuarios(todo.data)
+
+				return getJanet();
+			})
+
+			.then(datos => datos.json())
+
+			.then(janet => {
+				mostrarJanet(janet.data)
+			});
+
+
+		//Function que nos devuelve API de todos los usuarios
+		function getUsuarios(){
+			return fetch('https://reqres.in/api/users');
+		}
+
+		//Function que nos devuelve API del usuario 'Janet'
+		function getJanet(){
+			return fetch('https://reqres.in/api/users/2');
+		}
+
+		//**Lo encapsulamos en función. Mostrar todos los usarios en pantalla
+
+		function listadoUsuarios(usuarios){
+
+			usuarios.forEach((usuario, i) => {
+				let nombre = document.createElement('h3');
+				nombre.innerHTML = i + ". " + usuario.first_name + " " + usuario.last_name;
+
+				document.querySelector("#usuarios").appendChild(nombre);
+
+				document.querySelector(".loading").style.display = "none";
+			});
+		}
+
+		function mostrarJanet(usuario){
+
+
+			let nombre = document.createElement('h4');
+			let avatar = document.createElement('img');
+
+			nombre.innerHTML = usuario.first_name + " " + usuario.last_name;
+			avatar.src = usuario.avatar;
+			avatar.width = '100';
+
+			document.querySelector("#janet").appendChild(nombre);
+			document.querySelector("#janet").appendChild(avatar);
+
+
+			document.querySelector("#janet .loading").style.display = "none";
+
+		}
+		
+
+</script>
+<body>
+	<h1>Lista de usuarios</h1>
+	
+	<div id="usuarios">
+		
+		<span class="loading">Cargando...</span>
+
+	</div>
+
+	<div id="janet">
+		
+		<span class="loading">Cargando...</span>
+
+	</div>
+
+</body>
+</html>

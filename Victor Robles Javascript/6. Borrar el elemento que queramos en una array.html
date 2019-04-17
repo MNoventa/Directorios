@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formularios I</title>
+
+
+<script>
+
+var categorias =["Acción", "Terror", "Comedia"];
+var peliculas =["La vida es bella", "Harry Potter", "Gran Torino"];
+
+var cine =[categorias, peliculas];
+
+var indice = peliculas.indexOf("Gran Torino"); //Con indexOf se localiza la ubicación en la array (index) donde se encuentra lo que le hemos pasado ("Gran Torino")
+
+if(indice > -1){ //Se comprueba si ese elemento está dentro del array. Si fuera -1 significa que el elemento no se encuentra en la array
+	peliculas.splice(indice, 1); //Método splice permite borrar un elemento en base a un indice que le hayamos pasado, si le pasamos "indice" es la posición 2 del array. El segundo parámetro es las posiciónes que queremos que borre en base a "index"(posición 2). Es decir, se borrará a si mismo y ya está (le pasamos 1)
+}
+
+</script>
+
+</head>
+
+<body>
+
+</body>
+</html>

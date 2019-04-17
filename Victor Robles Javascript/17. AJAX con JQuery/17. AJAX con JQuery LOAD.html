@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+		#datos{
+			border: 2px solid green;
+			width: 250px;
+			height: 250px;
+			overflow: scroll;
+		}
+	</style>
+</head>
+<body>
+	
+	<script></script>
+
+	<h1>AJAX - JQuery</h1>
+	<div id="datos"></div>
+
+	<script>
+		
+		$(document).ready(function(){
+
+			// LOAD 
+			//Recojer por AJAX todo el html de una web y lo encrusta en el div #datos
+			
+			$("#datos").load("https://reqres.in/");
+			
+		});
+
+	</script>
+
+</body>
+</html>

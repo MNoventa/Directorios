@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script>
+	
+	'use strict'
+
+	var numeros = [];
+	var contador=0;
+
+	for(var i=0; i<6; i++){
+
+		//numeros[i] = prompt("Introduce un numero");
+		/*También se puede hacer con push
+*/
+		numeros.push(prompt("Introduce un numero"))
+		console.log(numeros[i])
+		document.write("<li>" + numeros[i] + "</li>")
+		contador++;
+	}
+
+	document.write("<br>");
+	document.write("La array tiene un total de " + contador + " elementos");
+	document.write("<br>");
+
+	numeros.sort(); //Ordenado.
+	console.log(numeros);
+
+	numeros.reverse(); //Array del revés.
+	console.log(numeros);
+
+	var busqueda=prompt("Qué número quieres buscar?")
+
+	var i=0
+	var estaEnLista=false;
+	var posicion=0;
+
+	for(i=0; i<=5; i++){
+		
+		if(busqueda==numeros[i]){
+			estaEnLista=true;
+			posicion=numeros[i];
+		}
+	}
+
+		if(estaEnLista==true){
+			document.write("Tu número " + busqueda + " está en la lista, en la posición " + posicion);
+		
+		}else if(estaEnLista==false){
+			document.write("Tu número " + busqueda + " no está en la lista");
+		}
+</script>	
+
+</body>
+</html>
