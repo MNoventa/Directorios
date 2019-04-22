@@ -1,6 +1,6 @@
 <!--
 	Inspeccionar nodo (en este caso el que tiene la id 1) con devel.
-	- url: localhost/nombresitio/devel/php (para direccionar a esta url, se debe instalar modulo devel + devel php debido a que ha habido una actualización)
+	- localizacion devel / url: localhost/nombresitio/devel/php (para direccionar a esta url, se debe instalar modulo devel + devel php debido a que ha habido una actualización)
 -->
 
 <?php
