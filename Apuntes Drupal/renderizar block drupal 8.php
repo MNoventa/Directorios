@@ -23,4 +23,4 @@
 	  $variables['test_bloque'] = \Drupal::service('renderer')->renderRoot($render);
 
 	  //En la template donde queremos renderizar el bloque se llama al bloque(con el nombre que la hayamos puesto -en este caso test_bloque- con twig tweak)
-	  {{ test_bloque }}
+	  {{ test_bloque }} 
