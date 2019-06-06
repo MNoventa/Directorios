@@ -1,0 +1,101 @@
+.arrow-container .wrapper {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.arrow-container .wrapper:after {
+  background: #ababab;
+  width: 2px;
+  height: calc(100% - 20px);
+  position: absolute;
+  content: '';
+  top: 10px;
+  left: 50%;
+}
+
+.arrow-container .arr {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  transform: rotateZ(-45deg);
+  vertical-align: middle;
+  font-size: 0;
+  line-height: 0;
+}
+
+.arrow-container .arr.arr-prev {
+  border-left: 3px solid #333;
+  border-top: 3px solid #333;
+}
+
+.arrow-container .arr.arr-next {
+  border-right: 3px solid #333;
+  border-bottom: 3px solid #333;
+}
+
+.card.card-reconocimiento,
+.card.card-momento {
+  max-width: 64vw;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  background: #fff;
+  transition: transform 0.2s;
+}
+.card-momento .image-momento {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.card-momento .year {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card .year .body-mom {
+  margin-bottom: auto;
+}
+.card-momento .year .body-mom p {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.8rem;
+}
+.link-to-bio {
+  visibility: hidden;
+}
+
+.card-reconocimiento.translate-x-125 {
+  transform: translateX(17vw);
+}
+.card-momento.translate-x-125 {
+  transform: translateX(-17vw);
+}
+.card-reconocimiento .order-1>* {
+  margin-left: 30px;
+}
+.card-reconocimiento.sliding,
+.card-momento.sliding {
+  transform: translateX(0);
+}
+
+.card.card-reconocimiento {
+  margin-left: 24vw;
+}
+.card.card-reconocimiento .year>div:first-child,
+.card .year>.mb15 {
+  color: #bbb09e;
+}
