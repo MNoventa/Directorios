@@ -1,6 +1,5 @@
 <?php
 	
-
 	//Recuperar la url relativa de un archivo en Drupal 8
 			
 			//Con file_url()

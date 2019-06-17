@@ -65,6 +65,4 @@
 
 	$usuario -> delete();
 
-
-
 ?>
